@@ -1,0 +1,15 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+permalink: index.html 
+summary: TridentはNetAppが管理するオープンソースのストレージプロビジョナーおよびオーケストレーターです。DockerとKubernetesによって管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。**Trident 25.10へのアップグレードに関する重要な情報については、リリースノートをお読みください。** 
+---
+= Trident 25.10 ドキュメント
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

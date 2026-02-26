@@ -1,0 +1,242 @@
+---
+sidebar: sidebar 
+permalink: trident-get-started/requirements.html 
+keywords: trident requirements, supported front ends, supported backends, kubernetes cluster, cluster requirements, version requirements, supported versions, host configuration, host os, system configuration, host operating system, fsx, ports, csi, images, orchestrators, storage systems, feature, kubernetes 
+summary: Tridentをインストールする前に、これらの一般的なシステム要件を確認する必要があります。特定のバックエンドには追加の要件がある場合があります。 
+---
+= 要件
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tridentをインストールする前に、これらの一般的なシステム要件を確認する必要があります。特定のバックエンドには追加の要件がある場合があります。
+
+
+
+== Tridentに関する重要な情報
+
+*Trident に関する以下の重要な情報を必ずお読みください。*
+
+.<strong>Tridentに関する重要な情報</strong>
+[%collapsible%open]
+====
+[]
+=====
+* Kubernetes 1.34 が Trident でサポートされるようになりました。Kubernetes をアップグレードする前に Trident をアップグレードしてください。
+* Trident は SAN 環境でのマルチパス構成の使用を厳格に強制し、multipath.conf ファイル内の推奨値は `find_multipaths: no`です。
++
+非マルチパス構成の使用、または multipath.conf ファイルでの `find_multipaths: yes`または `find_multipaths: smart`値の使用は、マウントの失敗を引き起こします。Trident は、 21.07 リリース以降 `find_multipaths: no`の使用を推奨しています。
+
+
+
+=====
+====
+
+
+== サポートされているフロントエンド（オーケストレータ）
+
+Tridentは、次のような複数のコンテナエンジンとオーケストレーターをサポートします：
+
+* Anthos On-Prem（VMware）およびベアメタル版 Anthos 1.16
+* Kubernetes 1.27 - 1.34
+* OpenShift 4.12、4.14 - 4.20（iSCSIノードの準備をOpenShift 4.19で使用する場合、サポートされる最小Tridentバージョンは25.06.1です。）
++
+
+NOTE: Tridentは、link:https://access.redhat.com/support/policy/updates/openshift["Red Hat Extended Update Support（EUS）リリースライフサイクル"]に準拠して古いOpenShiftバージョンを引き続きサポートしています。これは、アップストリームで公式にサポートされなくなったKubernetesバージョンに依存している場合でも同様です。このような場合にTridentをインストールする際は、Kubernetesバージョンに関する警告メッセージを無視しても問題ありません。
+
+* Rancher Kubernetes Engine 2（RKE2）v1.28.x - 1.34.x
++
+
+NOTE: _Trident は Rancher Kubernetes Engine 2 （RKE2） バージョン 1.27.x - 1.34.x でサポートされていますが、Trident は現在 RKE2 v1.28.5+rke2r1 でのみ認定されています。_
+
+
+
+Trident は、 Google Kubernetes Engine （ GKE ）、 Amazon Elastic Kubernetes Services （ EKS ）、 Azure Kubernetes Service （ AKS ）、 Mirantis Kubernetes Engine （ MKE ）、 VMWare Tanzu Portfolio など、他の多くの完全マネージド型およびセルフマネージド型の Kubernetes サービスとも連携します。
+
+TridentとONTAPは、link:https://kubevirt.io/["KubeVirt"]のストレージプロバイダーとして使用できます。
+
+
+WARNING: Tridentがインストールされている Kubernetes クラスターを1.25から1.26以降にアップグレードする前に、link:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-installation["Helmインストールのアップグレード"]を参照してください。
+
+
+
+== サポートされているバックエンド（ストレージ）
+
+Tridentを使用するには、以下のサポートされているバックエンドの1つ以上が必要です：
+
+* Amazon FSx for NetApp ONTAP
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud NetApp Volumes
+* NetApp All SAN Array（ASA）
+* オンプレミスFAS、AFF、またはASA r2（iSCSI、NVMe/TCP、FC）で、NetAppの完全サポートまたは限定サポート対象のONTAPバージョンを実行しているもの。link:https://mysupport.netapp.com/site/info/version-support["ソフトウェア バージョンのサポート"]を参照してください。
+* NetApp HCI/Element ソフトウェア 11 以上
+
+
+
+
+== KubeVirtおよびOpenShift VirtualizationのTridentサポート
+
+.サポートされているストレージドライバー：
+Tridentは、KubeVirtおよびOpenShift VirtualizationについてONTAPドライバをサポートしています：
+
+* ontap-nas
+* ontap-nas-economy
+* ontap-san（iSCSI、FCP、NVMe over TCP）
+* ontap-san-economy（iSCSI のみ）
+
+
+.考慮すべき点：
+* OpenShift Virtualization環境で、ストレージクラスを更新し、 `fsType`パラメータ（例： `fsType: "ext4"`）を追加してください。必要に応じて、 `volumeMode=Block`パラメータを `dataVolumeTemplates`で明示的に設定し、CDIにBlockデータボリュームの作成を通知してください。
+* _ブロックストレージドライバのRWXアクセスモード_: ontap-san (iSCSI、NVMe/TCP、FC) および ontap-san-economy (iSCSI) ドライバは、"volumeMode: Block" (raw デバイス) でのみサポートされます。これらのドライバでは、ボリュームが raw デバイスモードで提供されるため、 `fstype`パラメータは使用できません。
+* RWX アクセスモードが必要なライブ移行ワークフローでは、次の組み合わせがサポートされています：
++
+** NFS＋ `volumeMode=Filesystem`
+** iSCSI + `volumeMode=Block` （raw デバイス）
+** NVMe/TCP + `volumeMode=Block` （raw デバイス）
+** FC + `volumeMode=Block` （raw device）
+
+
+
+
+
+
+== 機能の要件
+
+以下の表は、このリリースの Trident で利用可能な機能と、サポートされる Kubernetes のバージョンをまとめたものです。
+
+[cols="3"]
+|===
+| 機能 | Kubernetesバージョン | 機能ゲートが必要ですか？ 
+
+
+| Trident  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| ボリューム Snapshot  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| ボリュームスナップショットからのPVC  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| iSCSI PV のサイズ変更  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| ONTAP 双方向 CHAP  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| 動的エクスポートポリシー  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| Trident Operator  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+
+
+| CSIトポロジー  a| 
+1.27 - 1.34
+ a| 
+いいえ
+
+|===
+
+
+== テスト済みのホストオペレーティングシステム
+
+ただし、Tridentは特定のオペレーティングシステムを公式にサポートしていませんが、以下のオペレーティングシステムは動作することが確認されています：
+
+* AMD64およびARM64上のOpenShift Container PlatformでサポートされているRed Hat Enterprise Linux CoreOS（RHCOS）バージョン
+* AMD64およびARM64上のRed Hat Enterprise Linux（RHEL）8以降
++
+
+NOTE: NVMe/TCP には RHEL 9 以降が必要です。
+
+* AMD64およびARM64上のUbuntu 22.04 LTS以降
+* Windows Server 2022
+* SUSE Linux Enterprise Server（SLES）15以降
+
+
+デフォルトでは、Tridentはコンテナ内で実行されるため、どのLinuxワーカーでも実行されます。ただし、これらのワーカーは、使用しているバックエンドに応じて、標準のNFSクライアントまたはiSCSIイニシエーターを使用してTridentが提供するボリュームをマウントできる必要があります。
+
+ `tridentctl`ユーティリティは、これらの Linux ディストリビューションのいずれでも実行できます。
+
+
+
+== ホスト構成
+
+Kubernetes クラスター内のすべてのワーカーノードは、ポッド用にプロビジョニングしたボリュームをマウントできる必要があります。ワーカーノードを準備するには、ドライバーの選択に基づいて NFS、iSCSI、または NVMe ツールをインストールする必要があります。
+
+link:../trident-use/worker-node-prep.html["ワーカーノードを準備する"]
+
+
+
+== ストレージシステムの構成
+
+Tridentでは、バックエンド構成でストレージシステムを使用する前に、ストレージシステムの変更が必要になる場合があります。
+
+link:../trident-use/backends.html["バックエンドを設定"]
+
+
+
+== Tridentポート
+
+Tridentが通信するには、特定のポートへのアクセスが必要です。
+
+link:../trident-reference/ports.html["Tridentポート"]
+
+
+
+== コンテナイメージと対応する Kubernetes バージョン
+
+エアギャップインストールの場合、次のリストはTridentのインストールに必要なコンテナイメージのリファレンスです。 `tridentctl images`コマンドを使用して、必要なコンテナイメージのリストを確認します。
+
+
+
+=== Trident 25.10に必要なコンテナイメージ
+
+[cols="2"]
+|===
+| Kubernetesのバージョン | コンテナイメージ 
+
+
+| v1.27.0、v1.28.0、v1.29.0、v1.30.0、v1.31.0、v1.32.0、v1.33.0、v1.34.0  a| 
+* docker.io/netapp/trident:25.10.0
+* docker.io/netapp/trident-autosupport:25.10
+* registry.k8s.io/sig-storage/csi-provisioner:v5.3.0
+* registry.k8s.io/sig-storage/csi-attacher:v4.10.0
+* registry.k8s.io/sig-storage/csi-resizer:v1.14.0
+* registry.k8s.io/sig-storage/csi-snapshotter:v8.3.0
+* registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.15.0
+* docker.io/netapp/trident-operator:25.10.0（オプション）
+
+
+|===

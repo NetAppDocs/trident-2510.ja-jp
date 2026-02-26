@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: trident-use/gcnv.html 
+keywords: trident backend, google cloud netapp volumes, nfs volumes, nfs, drivers, access modes, rwo, rwx, rwp, rwop, file system, gke, cloud identity, google cloud 
+summary:  
+---
+= Google Cloud NetApp Volumes バックエンドを設定する
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumes を Trident のバックエンドとして設定できるようになりました。Google Cloud NetApp Volumes バックエンドを使用して NFS および SMB ボリュームを接続できます。
+
+
+
+== Google Cloud NetApp Volumes ドライバの詳細
+
+Tridentは、 `google-cloud-netapp-volumes`クラスタと通信するためのドライバを提供します。サポートされているアクセスモードは、_ReadWriteOnce_（RWO）、_ReadOnlyMany_（ROX）、_ReadWriteMany_（RWX）、_ReadWriteOncePod_（RWOP）です。
+
+[cols="2, 1, 1, 2, 2"]
+|===
+| ドライバ | プロトコル | volumeMode | サポートされているアクセスモード | サポートされているファイルシステム 
+
+
+| `google-cloud-netapp-volumes`  a| 
+NFS SMB
+ a| 
+Filesystem
+ a| 
+RWO、ROX、RWX、RWOP
+ a| 
+`nfs`, `smb`
+
+|===
+
+
+== GKE のクラウド ID
+
+Cloud identity を使用すると、Kubernetes ポッドは、明示的な Google Cloud 認証情報を提供する代わりに、ワークロード ID として認証することで Google Cloud リソースにアクセスできるようになります。
+
+Google Cloud でクラウド ID を活用するには、次のものが必要です：
+
+* GKE を使用してデプロイされた Kubernetes クラスタ。
+* GKE クラスタで設定されたワークロード ID と、ノードプールで設定された GKE MetaData Server。
+* Google Cloud NetApp Volumes管理者（roles/netapp.admin）ロールまたはカスタムロールを持つGCPサービスアカウント。
+* cloudProviderに「GCP」を指定し、cloudIdentityに新しいGCPサービスアカウントを指定するTridentがインストールされています。以下に例を示します。
++
+[role="tabbed-block"]
+====
+.Trident オペレータ
+--
+Trident オペレーターを使用して Trident をインストールするには、 `tridentorchestrator_cr.yaml`を編集して `cloudProvider`を `"GCP"`に設定し、 `cloudIdentity`を `iam.gke.io/gcp-service-account: \cloudvolumes-admin-sa@mygcpproject.iam.gserviceaccount.com`に設定します。
+
+例：
+
+[source, yaml]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  imagePullPolicy: IfNotPresent
+  cloudProvider: "GCP"
+  cloudIdentity: 'iam.gke.io/gcp-service-account: cloudvolumes-admin-sa@mygcpproject.iam.gserviceaccount.com'
+----
+--
+.Helm
+--
+次の環境変数を使用して、*cloud-provider (CP)* および *cloud-identity (CI)* フラグの値を設定します：
+
+`export CP="GCP"`
+`export ANNOTATION="'iam.gke.io/gcp-service-account: \cloudvolumes-admin-sa@mygcpproject.iam.gserviceaccount.com'"`
+
+次の例では、Trident をインストールし、環境変数 `$CP`を使用して `cloudProvider`を GCP に設定し、環境変数 `$ANNOTATION`を使用して `cloudIdentity`を設定します：
+
+[listing]
+----
+helm install trident trident-operator-100.6.0.tgz --set cloudProvider=$CP --set cloudIdentity="$ANNOTATION"
+----
+--
+.<code>tridentctl</code>
+--
+次の環境変数を使用して、*クラウド プロバイダ*および*cloud identity*フラグの値を設定します：
+
+`export CP="GCP"`
+`export ANNOTATION="'iam.gke.io/gcp-service-account: \cloudvolumes-admin-sa@mygcpproject.iam.gserviceaccount.com'"`
+
+次の例では Trident をインストールし、 `cloud-provider`フラグを `$CP`に、 `cloud-identity`を `$ANNOTATION`に設定します：
+
+[listing]
+----
+tridentctl install --cloud-provider=$CP --cloud-identity="$ANNOTATION" -n trident
+----
+--
+====
+
