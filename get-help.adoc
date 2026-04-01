@@ -33,7 +33,7 @@ Trident は、バージョンに応じて 3 つのレベルのサポートを提
 
 
  a| 
-link:https://docs.netapp.com/us-en/trident/index.html["25.10"^]
+link:https://docs.netapp.com/us-en/trident-2510/index.html["25.10"^]
 | 2026年10月 | 2027年10月 | 2028年10月 
 
 

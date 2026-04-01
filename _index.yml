@@ -1,5 +1,10 @@
 ---
 indexpage:
+  title: Trident 25.10 ドキュメント
+  summary: TridentはNetAppが管理するオープンソースのストレージプロビジョナーおよびオーケストレーターです。DockerとKubernetesによって管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。**Trident
+    25.10へのアップグレードに関する重要な情報については、リリースノートをお読みください。**
+  keywords: trident, documentation, trident release notes, get started, deploy, upgrade,
+    use, trident protect, 2510, 25.10
   lead: Trident は、NetApp が管理するオープンソースのストレージプロビジョナーおよびオーケストレーターです。Docker と Kubernetes
     によって管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。
   tiles:
@@ -7,8 +12,6 @@ indexpage:
     links:
     - title: 新機能
       url: trident-rn.html
-    - title: 以前のバージョン
-      url: "/earlier-versions.html"
     - title: ASA r2ストレージシステムのTridentサポート
       url: "/trident-asar2-support.html"
   - title: はじめに
