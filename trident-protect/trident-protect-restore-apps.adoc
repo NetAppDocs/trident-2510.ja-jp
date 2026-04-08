@@ -297,7 +297,7 @@ tridentctl-protect create backupinplacerestore <my_restore_name> \
 
 
 .手順
-. Trident Protect CLIプラグインを使用して、デスティネーション クラスタ上のAppVault CRの可用性を確認します：
+. Trident Protect CLIプラグインを使用して、デスティネーション クラスタにAppVault CRが存在することを確認します：
 +
 [source, console]
 ----
@@ -305,9 +305,9 @@ tridentctl-protect get appvault --context <destination_cluster_name>
 ----
 +
 
-NOTE: アプリケーションのリストアに使用する名前空間がデスティネーション クラスタに存在することを確認します。
+NOTE: AppVault CR がデスティネーション クラスタに存在しない場合は、link:trident-protect-appvault-custom-resources.html["Trident Protect AppVaultオブジェクトを使用してバケットを管理する"]の手順に従って作成します。
 
-. デスティネーション クラスタから利用可能なAppVaultのバックアップコンテンツを表示します：
+. デスティネーション クラスタで利用可能なAppVaultのバックアップコンテンツを表示し、復元するバックアップの `appArchivePath`をメモします：
 +
 [source, console]
 ----
@@ -332,7 +332,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 | production1 | wordpress | backup | wordpress-bkup-2| 2024-10-30 08:37:40 (UTC)| backuppath2 |
 +-------------+-----------+--------+-----------------+--------------------------+-------------+
 ----
-. AppVault名前とアーカイブパスを使用して、アプリケーションをデスティネーション クラスタに復元します：
+. AppVault 名とアーカイブパスを使用して、デスティネーション クラスタにアプリケーションを復元します：注：CRを使用する場合は、アプリケーションの復元に使用する名前空間がデスティネーション クラスタに存在することを確認してください。
 
 
 [role="tabbed-block"]
@@ -344,16 +344,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 +
 ** *metadata.name*：（_必須_）このカスタム リソースの名前。環境に合わせて一意かつ適切な名前を選択してください。
 ** *spec.appVaultRef*：（_必須_）バックアップコンテンツが保存されるAppVaultの名前。
-** *spec.appArchivePath*：AppVault内でバックアップコンテンツが保存されるパス。このパスを見つけるには、次のコマンドを使用できます：
-+
-[source, console]
-----
-kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
-----
-+
-
-NOTE: BackupRestore CR が利用できない場合は、手順 2 に記載されているコマンドを使用してバックアップの内容を表示できます。
-
+** *spec.appArchivePath*：（必須）AppVault内のバックアップコンテンツが保存されるパス。ステップ2のコマンドを使用してバックアップの内容を表示し、復元するバックアップの `appArchivePath`を確認します。
 ** *spec.namespaceMapping*：リストア処理のソースネームスペースからデスティネーションネームスペースへのマッピング。 `my-source-namespace`と `my-destination-namespace`を環境の情報に置き換えます。
 +
 例：

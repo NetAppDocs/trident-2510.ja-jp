@@ -82,6 +82,9 @@ link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
 | -- | -- | 2026年1月 
 |===
 
+NOTE: 最新のTridentバージョンサポートスケジュールについては、 https://docs.netapp.com/us-en/trident/get-help.html#trident-support-lifecycle["サポートライフサイクルページ"]を参照してください。
+
+
 
 == セルフサポート
 
