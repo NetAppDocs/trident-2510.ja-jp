@@ -6063,6 +6063,7 @@
   <block id="43da129a49cd39591bce7ddda6f0dc82" category="list-text">Trident Protect CLIプラグインを使用して、デスティネーション クラスタにAppVault CRが存在することを確認します：</block>
   <block id="ad00af2208d1570d2b6ca4c83cbbb61e" category="admonition">AppVault CR がデスティネーション クラスタに存在しない場合は、<block ref="5f86f4618afc0bb72a8693bca73e9890" category="inline-link-macro-rx"></block>の手順に従って作成します。</block>
   <block id="b104127df6a8992a1e7bad2dbd1aad7c" category="list-text">デスティネーション クラスタで利用可能なAppVaultのバックアップコンテンツを表示し、復元するバックアップの<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>をメモします：</block>
-  <block id="3f170f167274ed66c26965c774034d2e" category="list-text">AppVault 名とアーカイブパスを使用して、デスティネーション クラスタにアプリケーションを復元します：注：CRを使用する場合は、アプリケーションの復元に使用する名前空間がデスティネーション クラスタに存在することを確認してください。</block>
   <block id="5566fd919e0cd2daefbf9fbd55ec09e3" category="list-text">*spec.appArchivePath*：（必須）AppVault内のバックアップコンテンツが保存されるパス。ステップ2のコマンドを使用してバックアップの内容を表示し、復元するバックアップの<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>を確認します。</block>
+  <block id="053aba80de03f3fdf626d1c858342330" category="list-text">AppVault名前とアーカイブパスを使用して、アプリケーションをデスティネーション クラスタに復元します：</block>
+  <block id="a1d573518c6d239a09cfdd19537e0944" category="admonition">CRを使用する場合は、アプリケーションのリストアに使用する名前空間がデスティネーション クラスタに存在することを確認してください。</block>
 </blocks>
