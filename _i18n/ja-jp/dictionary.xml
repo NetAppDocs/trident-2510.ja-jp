@@ -142,7 +142,6 @@
   <block id="804e1070c55dcfc75cbde5cbcb86c3ba" category="section-title">Kubernetes クラスタに Trident をインストールして使用する</block>
   <block id="df316d84e969d52af02710ec31df7055" category="section-title">Tridentはプライベートレジストリからのオフラインインストールをサポートしていますか？</block>
   <block id="5e05991e14fd9934a724121da40f5b98" category="inline-link-macro">Tridentのインストールについて</block>
-  <block id="d55b9ba8a4efff113044f9efe0557e0c" category="paragraph">はい、Tridentはオフラインでインストールできます。<block ref="ed3eb8298d3a91b1400b1be26865f5ec" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="75ac7954ef399713139c894c431e4116" category="section-title">Tridentをリモートでインストールできますか？</block>
   <block id="cab0813b2ef0c2dc3e0c17505f73a2f2" category="paragraph">はい。Trident 18.10以降では、クラスタへの<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block>アクセスを持つ任意のマシンからのリモートインストール機能をサポートしています。<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block>アクセスが確認されたら（例えば、リモートマシンから<block ref="1513e62b9eb7bbfc46c1be1a91a2ab76" prefix=" " category="inline-code"></block>コマンドを実行して確認）、インストール手順に従ってください。</block>
   <block id="50434308d8b9fc89f708232cb5e9cf87" category="section-title">Tridentで高可用性を構成できますか？</block>
@@ -151,9 +150,7 @@
   <block id="685a0ffaaa9ec81b2c31846cbf192282" category="paragraph">Trident は、アプリケーションが新しい PVC を要求するタイミングを判断するために Kubernetes API サーバーから読み取りを行うため、kube-system へのアクセスが必要です。</block>
   <block id="0df447334013f5ccae9c82a00df9508a" category="section-title">Tridentで使用される役割と権限は何ですか？</block>
   <block id="3c70f31b6cfd2fccfef3e715c4c4cabb" category="inline-link-macro">tridentctl インストールのカスタマイズ</block>
-  <block id="3d939b5d63f5846e5d71053999d3972e" category="paragraph">Tridentインストーラは、KubernetesのClusterRoleを作成します。これにより、KubernetesクラスタのPersistentVolume、PersistentVolumeClaim、StorageClass、およびSecretリソースへの特定のアクセス権が付与されます。<block ref="ddc7df443077796093efdaf5a64d03cd" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="8b1b2eab4c453e6c69faf86b91b46898" category="section-title">Trident がインストールに使用する正確なマニフェストファイルをローカルで生成できますか？</block>
-  <block id="b633901fb93d2b4cb35254a9764dd626" category="paragraph">必要に応じて、Tridentがインストールに使用する正確なマニフェストファイルをローカルで生成および変更できます。<block ref="ddc7df443077796093efdaf5a64d03cd" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="176cc68bd86878bb1bde4c3e72b4c315" category="section-title">2 つの別々の Kubernetes クラスター用の 2 つの別々の Trident インスタンスに対して、同じ ONTAP バックエンド SVM を共有できますか？</block>
   <block id="14151311f8b442ecc7db1533868dccd9" category="paragraph">推奨はされませんが、2つのTridentインスタンスで同じバックエンドSVMを使用することは可能です。インストール時に各インスタンスごとに一意のボリューム名を指定するか、または<block ref="641b2675465e765661450709e2351a8e" prefix=" " category="inline-code"></block>ファイル内で一意の<block ref="57a3822fdb39e72cdc47d89fd04ce467" prefix=" " category="inline-code"></block>パラメータを指定してください。これは、同じFlexVol volumeが両方のインスタンスで使用されないようにするためです。</block>
   <block id="55c5d3092c2cf2c38eb0a708eefb8486" category="section-title">ContainerLinux（旧 CoreOS）に Trident をインストールすることは可能ですか？</block>
@@ -325,7 +322,6 @@
   <block id="eddc3ab7d283c02464f100ff837cf055" category="inline-link-macro">Tridentリソース</block>
   <block id="01ba66c56fa9029a3ce0095f09b9b340" category="list-text"><block ref="01ba66c56fa9029a3ce0095f09b9b340" category="inline-link-macro-rx"></block></block>
   <block id="874d8a5301794a9ca2aba132ac2460f3" category="inline-link-macro">Kubernetesハブ</block>
-  <block id="8f4c1b75985ff2903107b7115115ea58" category="list-text"><block ref="8f4c1b75985ff2903107b7115115ea58" category="inline-link-macro-rx"></block></block>
   <block id="8b9ee3820f7179994c867a6cd7d1d378" category="summary">TridentはNetAppが管理するオープンソースのストレージプロビジョナーおよびオーケストレーターです。DockerとKubernetesによって管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。**Trident 25.10へのアップグレードに関する重要な情報については、リリースノートをお読みください。**</block>
   <block id="3396bf6761709c7c8fca5d0fadc63d7e" category="doc">Trident 25.10 ドキュメント</block>
   <block id="0c2517d08c2a451f035c427a4dc895e1" category="summary">このリリースの既知の問題は次のとおりです。</block>
@@ -905,17 +901,14 @@
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
   <block id="54ad97548183fc7d802b6db88573701f" category="paragraph">ONTAPは、NetAppのマルチプロトコル統合ストレージオペレーティングシステムで、あらゆるアプリケーションに高度なデータ管理機能を提供します。ONTAPシステムには、オールフラッシュ、ハイブリッド、またはオールHDD構成があり、エンジニアリングされたハードウェア（FASおよびAFF）、ホワイトボックス（ONTAP Select）、クラウドのみ（Cloud Volumes ONTAP）など、さまざまな導入モデルを提供しています。</block>
   <block id="cbb7697b4f6f189240d043ff70ca133c" category="admonition">Tridentは、上記のすべてのONTAP導入モデルをサポートします。</block>
-  <block id="5c04ffbd0c110bf7b37d6b95eb756b75" category="paragraph"><block ref="700b45b9fca207b66f675c8d5dfb073b" category="inline-link-rx"></block>は、クラウドでONTAP データ管理ソフトウェアを実行するソフトウェア型のストレージ アプライアンスです。Cloud Volumes ONTAPは、本番環境のワークロード、ディザスタリカバリ、DevOps、ファイル共有、およびデータベース管理に使用できます。ストレージ効率、高可用性、データレプリケーション、データ階層化、アプリケーションの整合性を提供することで、エンタープライズクラスのストレージをクラウドに拡張します。</block>
   <block id="f8869dc9dbb397ea76e820ae99f70217" category="paragraph"><block ref="6a2736fcbb5755dd03d114a5153506eb" category="inline-link-rx"></block>は、NetApp ONTAPストレージオペレーティングシステムを搭載したファイルシステムを起動して実行できる、完全に管理されたAWSサービスです。FSx for ONTAPを使用すると、使い慣れたNetAppの機能、パフォーマンス、管理機能を活用しながら、AWSにデータを保存するシンプルさ、俊敏性、セキュリティ、スケーラビリティのメリットを享受できます。FSx for ONTAPは、多くのONTAPファイルシステム機能と管理APIをサポートしています。</block>
   <block id="1fdf61a8f946268990d8e15dd9069a6d" category="paragraph"><block ref="eca39b018af81e7b5c8e71b5b4aa3790" category="inline-link-rx"></block>により、ストレージ管理者は、パフォーマンスを保証し、簡素化され合理化されたストレージ フットプリントを実現することで、ワークロードを統合できます。ストレージ管理のあらゆる側面を自動化する API と組み合わせることで、Element はストレージ管理者が少ない労力でより多くのことを実行できるようにします。</block>
   <block id="25f221cc63a7e1fa55b05c29420a72a2" category="paragraph"><block ref="2841e7defe3939e68d83d007d1ad666b" category="inline-link-rx"></block>は、日常的なタスクを自動化し、インフラ管理者がより重要な機能に集中できるようにすることで、データセンターの管理と拡張を簡素化します。</block>
   <block id="be17f8b9c728a6cb61cad5a2609b3888" category="paragraph">NetApp HCI は Trident によって完全にサポートされています。Trident は、コンテナ化されたアプリケーション用のストレージデバイスを、基盤となる NetApp HCI ストレージ プラットフォームに対して直接プロビジョニングおよび管理できます。</block>
   <block id="29e7ab00082418141d470583a19c28d3" category="paragraph"><block ref="2384314bcd106c8062815b2ed789c4ad" category="inline-link-rx"></block>は、NetAppを基盤とするエンタープライズクラスのAzureファイル共有サービスです。NetAppに期待されるパフォーマンスと豊富なデータ管理機能により、最も要求の厳しいファイルベースのワークロードをAzureでネイティブに実行できます。</block>
-  <block id="0ce84605b24873b2ee81987302d60089" category="paragraph"><block ref="bc468e9b0072cb6f1552f9bc0a3b6063" category="inline-link-rx"></block>は、オールフラッシュのパフォーマンスでNFS経由でNASボリュームを提供するクラウドネイティブファイルサービスです。このサービスにより、レガシー アプリケーションを含むあらゆるワークロードをGCPクラウドで実行できるようになります。一貫したハイパフォーマンス、即時クローン作成、データ保護、Google Compute Engine（GCE）インスタンスへの安全なアクセスを提供する、フルマネージドサービスです。</block>
   <block id="a60c2f57df655a9ac5fcaa0750886195" category="summary">Kubernetes を使い始めたばかりの場合は、手順に従って Kubernetes をインストールし、試してみてください。これらの手順では、Trident がデモ目的で統合できる必要最小限のシングルノード クラスタを提供します。</block>
   <block id="8c33c0d65f9f2a648eb30a9703072383" category="doc">Trident のクイックスタート</block>
   <block id="a555fee6c6587118e36d8dd135df1313" category="inline-link-macro">Tridentの要件</block>
-  <block id="96a40ad4ad263d59437e326f22eaecdf" category="paragraph">Tridentをインストールして、数ステップでストレージリソースの管理を開始できます。開始する前に、<block ref="d5fb7f9fba906801b000d5533dc030cf" category="inline-link-macro-rx"></block>を確認してください。</block>
   <block id="f1bcf1c509e84f327a99d5510a722dec" category="inline-link-macro">Docker向けTrident</block>
   <block id="5b5dc0344ff29ee1aeb0845b87692cf1" category="admonition">Dockerについては、<block ref="f7120b9f314af1c9d82deae8957b54f3" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1</block>
@@ -927,7 +920,6 @@
   <block id="8f571d58ed95211be01ea993de3fee3e" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Trident をインストール</block>
   <block id="9877a7ec0ff327ca21c8022d61c25f88" category="paragraph">Trident は、さまざまな環境や組織に最適化された複数のインストール方法とモードを提供します。</block>
   <block id="b8b9eab8c1ed7b79387652490f5724ec" category="inline-link-macro">Tridentをインストール</block>
-  <block id="d94be11e75caa4db23a136d9b4cca4d9" category="paragraph"><block ref="d94be11e75caa4db23a136d9b4cca4d9" category="inline-link-macro-rx"></block></block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">3つ</block>
   <block id="f3b066024fd8e2699d194d41d5e46a5d" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> バックエンドを作成する</block>
   <block id="2e5120dd8211c4057a742a03b68ffe1a" category="paragraph">バックエンドは、Trident とストレージ システムの関係を定義します。バックエンドは、Trident がそのストレージ システムとどのように通信するか、および Trident がそこからボリュームをどのようにプロビジョニングするかを指定します。</block>
@@ -1174,12 +1166,9 @@
   <block id="4a60d2fff997f6f3d9f8c6079b571355" category="section-title">Trident 25.10に関する重要な情報</block>
   <block id="906e93a2060242b360786042d0f40c9f" category="section-title">Helmを使用してTridentオペレーターを導入し、Tridentをインストールする</block>
   <block id="7d3f46589c43a64fd040e4f0e0691a86" category="inline-link-macro">Helmチャート</block>
-  <block id="54cae3576f4c4ef43a60a75276a7afdb" category="paragraph">Trident <block ref="30e4ebd32bc870aef019efda0672389c" category="inline-link-macro-rx"></block>を使用すると、Tridentオペレーターを展開し、Tridentを1ステップでインストールできます。</block>
   <block id="3342f1a2f74c6062a39d3076c35c5a5b" category="inline-link-macro">インストールの概要</block>
-  <block id="6657de3ab3deaeef939684c50d5310e3" category="paragraph"><block ref="17128a3e349370ba21c9ca13ca0bc297" category="inline-link-macro-rx"></block>を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。</block>
   <block id="8f3958d59b8da100a4663b1cace112b7" category="inline-link-macro">導入の前提条件</block>
   <block id="2e1b3f44683eee188be985693c4af5e1" category="inline-link-macro">Helm バージョン3</block>
-  <block id="64d2af40480a5cebf7e64939f6253bf3" category="paragraph"><block ref="c7282b7e52e27c635b613335e59bf436" category="inline-link-macro-rx"></block>に加えて<block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>が必要です。</block>
   <block id="4d204b33a367deb7dbcb20395c917da2" category="admonition">プライベートリポジトリにTridentをインストールする際、<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block>スイッチを使用してリポジトリの場所を指定する場合は、リポジトリパスに<block ref="191065897cafafd6677dec7355a785d9" prefix=" " category="inline-code"></block>を使用しないでください。</block>
   <block id="43eba64dcd06763432addbcf8db2d367" category="list-text">Trident Helm リポジトリを追加します：</block>
   <block id="b3735f022036728c24121c449da97183" category="inline-link-macro">TridentとCSIのイメージ</block>
@@ -1297,7 +1286,6 @@
   <block id="5305ee1fa605f73597adfacd52531aac" category="section-title">Trident10に関する重要な情報</block>
   <block id="8ff1bc8a7ac69f081f871e9e2a8c0d0f" category="section-title">Tridentオペレーターを手動で展開してTridentをインストールする</block>
   <block id="ea8cda06a0e70ad34c1b9ab1b7135105" category="inline-link-macro">サポートされている Kubernetes クラスター</block>
-  <block id="bcc71769dd00af93bb067088094d9b0b" category="paragraph">Linux ホストにログインし、正常に動作している<block ref="ac355729d1ddc95a290738ca862fed08" category="inline-link-macro-rx"></block>を管理していること、および必要な権限があることを確認します。</block>
   <block id="e420b75ec3bc014e3f69c43b2383768b" category="admonition">OpenShift では、以下のすべての例で<block ref="fb024832e51eb5f6da9113a745f1eb59" prefix=" " category="inline-code"></block> を<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> の代わりに使用し、最初に<block ref="924132b4cedac6927feecff33e0a8e17" prefix=" " category="inline-code"></block> または<block ref="42c32f65d2d1c08a83fbc226da30a162" prefix=" " category="inline-code"></block> を実行して *system:admin* としてログインしてください。</block>
   <block id="92e83bca2bb40324de35154f8c95083d" category="list-text">Kubernetes のバージョンを確認します：</block>
   <block id="b17eef151a74252395aad7db4b148b57" category="list-text">クラスタ管理者権限を確認します：</block>
@@ -1354,7 +1342,6 @@
   <block id="9be65bfc0904c8b8e06776335df88c52" category="summary">Tridentオペレーターを手動で導入してTridentをインストールできます。このプロセスは、Tridentで必要なコンテナイメージがプライベートレジストリに保存されていないインストールに適用されます。</block>
   <block id="5d8f25140dde9344f1318b1319929306" category="doc">Tridentオペレータを手動で導入する（標準モード）</block>
   <block id="e09b85e9dd23a53724a460d162828e91" category="paragraph">Tridentオペレーターを手動で導入してTridentをインストールできます。このプロセスは、Tridentで必要なコンテナイメージがプライベートレジストリに保存されていないインストールに適用されます。プライベートイメージレジストリをお持ちの場合は、<block ref="3fd9bb28718715a2d036f0ab9d9239b8" category="inline-link-macro-rx"></block>を使用してください。</block>
-  <block id="953aeeea088f5f969f2eba121ae81f15" category="paragraph">インストールを始める前に、Linuxホストにログインし、正常に動作している<block ref="ac355729d1ddc95a290738ca862fed08" category="inline-link-macro-rx"></block>を管理していること、および必要な権限を持っていることを確認します。</block>
   <block id="ef2305a5dae85359e321280954448fc1" category="paragraph"><block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>カスタムリソース定義（CRD）を作成します。後で<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>カスタムリソースを作成します。<block ref="91ff3926f7c7983bb4a56689f631e6c9" prefix=" " category="inline-code"></block>で適切なCRD YAMLバージョンを使用して<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>CRDを作成します。</block>
   <block id="7e1c8354fb2b2ecb65abfa6a63e08970" category="section-title">ステップ3：Tridentオペレーターを導入する</block>
   <block id="c35c65e4cd4cef23559781ed63709eb0" category="section-title">ステップ4：<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>を作成してTridentをインストールする</block>
@@ -1372,7 +1359,6 @@
   <block id="ca5380881d4e3b38f359d5d05acd6163" category="paragraph">インストールのステータスは次のようになります。</block>
   <block id="c5e8fc3926c956e64487a70aa036ec8c" category="paragraph">ポッド作成ステータスを使用してインストールを確認するか、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を使用できます。</block>
   <block id="5ba19178fb1b2111306714e923b35945" category="inline-link-macro">デバッグモードをオンにする</block>
-  <block id="43e7d51a6323aabe7af3d192e157f5ed" category="admonition">インストーラが正常に完了しない場合、または<block ref="ce3abad3e11d6a43c5178e20a0c7d64b" prefix=" " category="inline-code"></block> <block ref="2903817a25b5de1e17a06122d71c5cf9" prefix="(" category="inline-code"></block>（23.01より前のバージョン）が*Running*ステータスでない場合、プラットフォームはインストールされていません。<block ref="9b017020b9d48d433ec90c548e6b5c70" prefix=" " category="inline-code"></block>を使用して<block ref="82f062b46969132d4baf9d002395a676" category="inline-link-macro-rx"></block>問題のトラブルシューティングを行います。</block>
   <block id="d01f9020330072ac03affe8ff09d74c1" category="paragraph">以下の例は、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を使用してTridentをインストールするためのサンプル構成を示しています。</block>
   <block id="d5999fd61d148b96e54f154a54ffead5" category="example-title">Windowsノード</block>
   <block id="f19a63197b0bddc429409fc31e0f0028" category="paragraph">Windows ノードで Trident を実行できるようにするには：</block>
@@ -1383,7 +1369,6 @@
   <block id="16f386086a2ad7537b5e373f9c0c2d25" category="summary">Tridentオペレーター（手動またはHelmを使用）または<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を使用してTridentをインストールできます。このトピックでは、適切なインストールプロセスを選択するための重要な情報を提供します。</block>
   <block id="3673a00b7dc94dd4c41d2410acd2fd30" category="paragraph">Tridentをさまざまな環境や組織に導入できるようにするため、NetAppでは複数のインストールオプションを提供しています。Tridentは、Tridentオペレーター（手動またはHelmを使用）を使用するか、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を使用してインストールできます。このトピックでは、適切なインストールプロセスを選択するための重要な情報を提供します。</block>
   <block id="ef911ad0da9f5477ca7ec7af0ba4181a" category="paragraph">インストール パスに関係なく、次のものが必要です：</block>
-  <block id="3f2851ece89063ca1615062ac2117a4e" category="list-text">サポートされているバージョンの Kubernetes を実行し、機能要件が有効になっている、サポートされている Kubernetes クラスターに対する完全な権限。詳細については、<block ref="3675fd04b78685cacd6e23511ab11d10" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="071d9becf308917b53d70c09e7da51b6" category="list-text">サポートされているNetAppストレージシステムへのアクセス。</block>
   <block id="19eb712f406fc64109f96d9cf4055cb9" category="list-text">すべての Kubernetes ワーカーノードからボリュームをマウントする機能。</block>
   <block id="5f35b91e200cda68bf700d65b89c2c73" category="list-text"><block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block>（または、OpenShiftを使用している場合は<block ref="fb024832e51eb5f6da9113a745f1eb59" prefix=" " category="inline-code"></block>）がインストールされ、使用するKubernetesクラスタを管理するように設定されたLinuxホスト。</block>
@@ -1392,13 +1377,10 @@
   <block id="c585967fa32d82c5e3c24bd63926c6a0" category="list-text">Docker EnterpriseでKubernetesを使用している場合は、<block ref="57562caf1c76e1a261b7e2f8c3d113f9" category="inline-link-rx"></block>。</block>
   <block id="8ded34c5caad3971bb6d0a2b202d7b32" category="list-text">クラスターは特権ワークロードをサポートする必要があります。</block>
   <block id="4a052772dca278b7be31d54ca9f21831" category="inline-link-macro">基本的な概念</block>
-  <block id="a0c3ccd8e55dd8a4f5f5ad3a5269e331" category="admonition"><block ref="13aad4b6f98e790ff55e578921fa5ede" category="inline-link-macro-rx"></block>にまだ慣れていない場合は、今こそそれを実行する絶好の機会です。</block>
   <block id="a24b4ef46f44c1b54b99e62f49bef9af" category="section-title">インストール方法を選択してください</block>
   <block id="dcb987a2d08ee1a9198d1183b1a63a96" category="inline-link-macro">方法間の移動</block>
-  <block id="e11c9248bc5d43c6663f67955adbc53b" category="paragraph">適切なインストール方法を選択してください。決定を下す前に<block ref="e6ce874bf5f421a383109cc222a74763" category="inline-link-macro-rx"></block>の考慮事項も確認する必要があります。</block>
   <block id="bd1cc9ebdb33ed22a54815219f97af08" category="section-title">Tridentオペレーターの使用</block>
   <block id="b2ad529645b5bea51c4bcd516a5c5c8f" category="inline-link-macro">Tridentオペレータの導入をカスタマイズ</block>
-  <block id="4561600b99ad801aedaa0ed3d3f3d7dd" category="paragraph">手動でのデプロイでもHelmを使用する場合でも、Tridentオペレーターはインストールを簡素化し、Tridentリソースを動的に管理する優れた方法です。さらに、<block ref="5290e5312b651716bedf8a83ec5a6467" category="inline-link-macro-rx"></block>は、<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>カスタムリソース（CR）の属性を使用して行うこともできます。</block>
   <block id="9d2c1d92b0ecb606394b40e3553d07d2" category="paragraph">Trident Operatorを使用する利点は次のとおりです：</block>
   <block id="4c4c1456097b6c9eca1c708465c381be" category="example-title">&lt;strong&gt;Tridentオブジェクトの作成&lt;/strong&gt;</block>
   <block id="9bb09894435f05fa667865ab4c45ace7" category="paragraph">Trident オペレーターは、Kubernetes バージョンに応じて次のオブジェクトを自動的に作成します。</block>
@@ -1654,7 +1636,6 @@
   <block id="3d40f2a5a694e68fd88105fc4f5ee0d4" category="section-title">Tridentオペレータのアップグレード処理</block>
   <block id="74e51c48d68796e06830c062f5c955c1" category="inline-link-macro">Tridentオペレーターを使用する利点</block>
   <block id="99c73e527698ab76b32674b7e9dd4708" category="inline-link-macro">_ローリング アップデート_</block>
-  <block id="6bd585eb6409f22b8a1e247f4935c581" category="paragraph">Trident のインストールとアップグレードの多くの<block ref="1294f86abdf2591159d9dd04918b1092" category="inline-link-macro-rx"></block>の 1 つは、既存のマウントされたボリュームを中断することなく、Trident と Kubernetes オブジェクトを自動的に処理することです。このようにして、Trident はダウンタイムなしでアップグレードをサポートできます。または<block ref="c0fb6b6f12bb8ae805a97690328ec023" category="inline-link-macro-rx"></block>。特に、Trident オペレーターは Kubernetes クラスターと通信して次の操作を行います（：）</block>
   <block id="1a1508da73374db3dd227799f48fdf63" category="list-text">Trident コントローラの導入とノード DaemonSet を削除して再作成します。</block>
   <block id="88b9e59609789e4bf00d72c8be9dd376" category="list-text">Trident Controller PodとTrident Node Podを新しいバージョンに置き換えます。</block>
   <block id="6d3156de6583a452ead75c70c186fcb8" category="list-text">1 つのノードが更新されない場合でも、残りのノードの更新は妨げられません。</block>
@@ -1674,12 +1655,9 @@
   <block id="0efdc02c2d9fa1fcf31ff85fec4ed8de" category="summary">オペレータを使用すると、既存の Trident インストールを簡単にアップグレードできます。</block>
   <block id="9a98985a342ee2d7d213394e90d838a9" category="doc">Trident Operator または Helm を使用して Trident インストールをアップグレードする</block>
   <block id="d6b7a42c6c41b071d2c80b3e4c2a7edf" category="inline-link-macro">アップグレード方法を選択</block>
-  <block id="5430a6b8f98712c8210f8df2d906793a" category="paragraph">Trident オペレーターを使用して、手動または Helm を使用して Trident をアップグレードできます。Trident オペレーターのインストールから別の Trident オペレーターのインストールにアップグレードすることも、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>のインストールから Trident オペレーターバージョンにアップグレードすることもできます。Trident オペレーターのインストールをアップグレードする前に<block ref="5cffa5fbe758cc3901f0e33c78b29d1b" category="inline-link-macro-rx"></block>を確認してください。</block>
   <block id="3ef75911ec16a9d0ba70cfd4e68dcb71" category="section-title">手動インストールのアップグレード</block>
   <block id="618fab30e005e12b783d70218c18af46" category="paragraph">クラスタを対象とした Trident オペレータのインストールから、別のクラスタを対象とした Trident オペレータのインストールにアップグレードできます。すべての Trident バージョンでは、クラスタを対象としたオペレータを使用します。</block>
   <block id="eb7a4fa3d9aff7ec5b23abb8b82d516b" category="paragraph">Trident は、オペレーターをインストールし、Kubernetes バージョンに関連付けられたオブジェクトを作成するために使用できるバンドルファイルを提供します。</block>
-  <block id="bd2cc8575fe69c7f775292759380c838" category="inline-link-macro">bundle_pre_1_25.yaml</block>
-  <block id="f27e6cf95381139bd9916c64f178d212" category="list-text">Kubernetes 1.24を実行しているクラスターの場合は、<block ref="ccef28639b5a7d8b851d32c1ca719ce3" category="inline-link-macro-rx"></block>を使用します。</block>
   <block id="5a02ebff4889c2de0379a0fb10bed282" category="inline-link-macro">bundle_post_1_25.yaml</block>
   <block id="b9f6abf28d1518cdaae0ed7e29a5727e" category="list-text">Kubernetes 1.25以降を実行しているクラスターの場合は、<block ref="d1039b29d019902f70f499d65ede99cb" category="inline-link-macro-rx"></block>を使用します。</block>
   <block id="4e9ac50b8f51023570ef0b0a0a827912" category="inline-link-macro">サポートされている Kubernetes バージョン</block>
@@ -1697,14 +1675,12 @@
   <block id="5f5d62e54c7f1681b8aca17a51dae491" category="list-text">Trident がインストールされているネームスペースで、Trident リリースのドライランを実行します。クリーンアップされるリソースが一覧表示されます。</block>
   <block id="db65493922bad76f3135ea26ab9b5377" category="list-text">helm を使用して完全実行を実行し、クリーンアップを実行します。</block>
   <block id="cdfb4a820b1c2fb971221fb06e0dcd22" category="inline-link-macro">Helmを使用してTridentをインストールしました</block>
-  <block id="d180bc23594b2a81a598da69af7136af" category="list-text"><block ref="538f4beb16c8502421a8389e199d34ce" category="inline-link-macro-rx"></block>の場合は、<block ref="9ba27131bd1269499334744b89769fac" prefix=" " category="inline-code"></block>を使用してワンステップでアップグレードできます。Helmリポジトリを追加していない場合、またはアップグレードに使用できない場合：</block>
   <block id="51c9e4ca2440cc879a0ac3211d74b056" category="list-text">最新のTridentリリースを<block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>からダウンロードします。</block>
   <block id="196e168efbb56cd8b229b8c03e801ea3" category="list-text"><block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block>コマンドを使用します。<block ref="a9bf50a881c5d6e503f43683efad1e38" prefix=" " category="inline-code"></block>にはアップグレード先のバージョンを指定します。</block>
   <block id="34c5f2f84f16f23213713a6adc11c319" category="admonition">初期インストール時にカスタムオプション（TridentおよびCSIイメージ用のプライベートミラーリポジトリの指定など）を設定した場合は、それらのオプションがアップグレードコマンドに含まれるように、<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block>コマンドに<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block>を追加してください。そうしないと、値がデフォルトにリセットされます。</block>
   <block id="3d0107bfa0874592e9dc04f9869b604b" category="list-text"><block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block>を実行して、チャートとアプリのバージョンが両方ともアップグレードされたことを確認します。<block ref="3e725291d4b17065fdcd321172fcfae3" prefix=" " category="inline-code"></block>を実行して、デバッグメッセージを確認します。</block>
   <block id="613909529798c8a2543da8e954e5d742" category="section-title"><block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>インストールからTridentオペレーターへのアップグレード</block>
   <block id="9142b40107d9c5a0b86ef0ce8c25a88b" category="paragraph">Tridentオペレーターの最新リリースには、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>インストールからアップグレードできます。既存のバックエンドとPVCは自動的に利用できるようになります。</block>
-  <block id="733aa7fe5deef27d1cb0828cff0f17bd" category="admonition">インストール方法を切り替える前に、<block ref="d7d87809bc6e1001ccd94c7433d28fd5" category="inline-link-macro-rx"></block>を確認してください。</block>
   <block id="6a40bcc839c7c4e3dc8f6767cbe14743" category="list-text">最新の Trident リリースをダウンロードします。</block>
   <block id="4ab464bddccdcbc36fab4cea802025f9" category="list-text">マニフェストから<block ref="de2dc323226e711fbec4c5c39eeac5b8" prefix=" " category="inline-code"></block> CRD を作成します。</block>
   <block id="71530aef1814290453dc7add3bdae349" category="list-text">クラスタースコープのオペレーターを同じ名前空間にデプロイします。</block>
@@ -1733,7 +1709,6 @@
   <block id="f83034df0569133b2bce8e38446dfa7d" category="list-text">オペレータポッドがある場合は、<block ref="9ce56b0c50ae80fe754522969b1c96b9" prefix=" " category="inline-code"></block>を使用して、TridentがHelmを使用してインストールされたかどうかを確認します。</block>
   <block id="dccfb2ce978b2c73d6a7308a124d0043" category="section-title">ステップ3：アップグレード方法を選択する</block>
   <block id="74652b96889938fdef1037f82abf39b0" category="inline-link-macro">インストール方法を切り替える</block>
-  <block id="831878da1887476c96f4d3663eb93345" category="paragraph">通常は、最初のインストールと同じ方法でアップグレードする必要がありますが、<block ref="e34c010032791417159012a5e31d7540" category="inline-link-macro-rx"></block>。Trident をアップグレードするには 2 つのオプションがあります。</block>
   <block id="441b9a0ce7113f17c0021f9922b1c865" category="inline-link-macro">Tridentオペレータを使用してアップグレードする</block>
   <block id="672218727121432fb7209f42c6a00514" category="list-text"><block ref="672218727121432fb7209f42c6a00514" category="inline-link-macro-rx"></block></block>
   <block id="14d76a1fc05dcace5308e48b3d9bad49" category="admonition">オペレータでアップグレードする前に<block ref="4185c20447fb5f0bb4f33698bfd20d27" category="inline-link-macro-rx"></block>を確認することをお勧めします。</block>
@@ -1743,10 +1718,8 @@
   <block id="2a21586f7990f8cb0f8951cd2ef7bc3b" category="doc">tridentctl によるアップグレード</block>
   <block id="ffdcc81ea1b556d1898b6edeef92af9c" category="paragraph">既存のTridentインストールは<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を使用して簡単にアップグレードできます。</block>
   <block id="f01c58ea1eebde50a8ce26c58daf4cce" category="paragraph">Trident をアンインストールして再インストールすると、アップグレードとして機能します。Trident をアンインストールしても、Trident デプロイメントで使用される永続ボリューム要求（PVC）と永続ボリューム（PV）は削除されません。すでにプロビジョニングされている PV は、Trident がオフラインの間も引き続き使用可能であり、Trident はオンラインに戻った後、その間に作成されたすべての PVC のボリュームをプロビジョニングします。</block>
-  <block id="ab639a35db468f671d4a76735e801015" category="paragraph"><block ref="5cffa5fbe758cc3901f0e33c78b29d1b" category="inline-link-macro-rx"></block>を使用してアップグレードする前に<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を確認してください。</block>
   <block id="7ad65028965606bad1c173b4f16cefeb" category="list-text"><block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>でアンインストールコマンドを実行して、CRDと関連オブジェクトを除く、Tridentに関連付けられたすべてのリソースを削除します。</block>
   <block id="3777d5420fb2ef4c5e434cd5af97d73d" category="inline-link-macro">tridentctl を使用して Trident をインストールする</block>
-  <block id="23d4814be45e57b94df46ce2ee2a19f6" category="list-text">Trident を再インストールします。<block ref="6fa1b6e43e706a69762bd9a319950a21" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="1d2d1200e759d67b259f843be2270f71" category="admonition">アップグレードプロセスを中断しないでください。インストーラが完了まで実行されることを確認してください。</block>
   <block id="186ed0696d9f28961b696fce39a1ab04" category="summary">Trident Protect を使用すると、Trident を使用してアプリケーションとアプリケーションデータを保護できます。</block>
   <block id="a1fc1c89153021eb03a34941e90a9ac8" category="doc">Trident Protectについて学ぶ</block>
@@ -2726,7 +2699,6 @@
   <block id="1d17b5b3f5eac148844c892849fb56ee" category="list-text"><block ref="8c546380d19a34159a5f534f63ed1345" category="inline-link-macro-rx"></block>。</block>
   <block id="797abdcfd244820f24b3d4152205e999" category="list-text">まだインストールされていない場合は、クラスタに Operator Lifecycle Manager（OLM）をインストールします<block ref="2517ba685c9750605ef002ea5ca0dd7c" prefix=" " category="inline-code"></block></block>
   <block id="c2517225f0cf11c14cfa8f15b56b4221" category="list-text">Node Health check Operatorをインストールします<block ref="09b6bb475dc51286ca7e6eec20c4f77d" prefix=" " category="inline-code"></block>。</block>
-  <block id="0d554e4a64276c6bbaa2f252faef4d3a" category="admonition">以下の<block ref="d3636ba06fda749510d82b74e497601f" category="inline-xref-macro-rx"></block>セクションで指定されている別の方法を使用して、ノード障害を検出することもできます。</block>
   <block id="ebd17c61154ac668b32728307007008a" category="inline-link-macro">ノードヘルスチェックオペレーター</block>
   <block id="cc47bb57619fcdb7de5b495a2c701bf0" category="paragraph"><block ref="03167ed92cb924147e7b17a7c0b61981" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="2c4a935f02b64db18fe237d1902e292b" category="list-text">Trident ネームスペース内に NodeHealthCheck（NHC）CR を作成して、クラスター内のワーカーノードを監視します。例：</block>
@@ -5432,7 +5404,6 @@
   <block id="9b85b10750f4b0e98b7853ee468d8bd5" category="list-text">SMB ボリューム：</block>
   <block id="cf201a9e802aa6e35997590206919b1a" category="list-text">SMBボリュームは、<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>ドライバーのみを使用してサポートされます。</block>
   <block id="6bb2a5c441a4e421f26e835928b68f1f" category="list-text">SMB ボリュームは Trident EKS アドオンではサポートされていません。</block>
-  <block id="910bc8aad96dce304454db69330c4c1c" category="list-text">Trident は、 Windows ノード上で実行されているポッドにマウントされた SMB ボリュームのみをサポートします。詳細については、<block ref="5d9770278862f1ca4af19e761a5fa655" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="3111c4c842496dcfcddb5de6e9f7ec11" category="list-text">Trident 24.02より前では、自動バックアップが有効になっているAmazon FSxファイルシステムで作成されたボリュームは、Tridentで削除できませんでした。Trident 24.02以降でこの問題を防ぐには、Amazon FSx for ONTAPのバックエンド設定ファイルで<block ref="d731d2fecb66f9c4a30253bd316a220f" prefix=" " category="inline-code"></block>、AWS<block ref="1e9c0fd1beef5ff8ed3bef2ae3b7e560" prefix=" " category="inline-code"></block>、AWS<block ref="9af4d8381781baccb0f915e554f8798d" prefix=" " category="inline-code"></block>、およびAWS<block ref="ce656850400574e9f9cffb285ee8abc0" prefix=" " category="inline-code"></block>を指定します。</block>
   <block id="9f953e6f7a1bf75b24ad7c1f72aeda22" category="admonition">IAM ロールを Trident に指定する場合は、<block ref="1e9c0fd1beef5ff8ed3bef2ae3b7e560" prefix=" " category="inline-code"></block>、<block ref="c9ff119073ea2567730fb42e3a4fe805" prefix=" " category="inline-code"></block>、および<block ref="ce656850400574e9f9cffb285ee8abc0" prefix=" " category="inline-code"></block>フィールドを Trident に明示的に指定することを省略できます。詳細については、<block ref="d3e98810edf44af02b30486ed13bd043" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="6b37510d663e6eea4cd2d594f41e9e80" category="section-title">Trident SAN/iSCSI と EBS-CSI ドライバの同時使用</block>
@@ -5852,8 +5823,6 @@
   <block id="87a522ecb9df14bf978f6f1da8a654a8" category="list-text">ソースPVCへのアクセスを取り消すには、<block ref="287f26e3328f9ac0f3f4da2cdaddd3e2" prefix=" " category="inline-code"></block>または<block ref="11650d25d20af47978d85fd6e19c89aa" prefix=" " category="inline-code"></block>アノテーションを削除するか、<block ref="d6995f631b22fb3f8e94aad1b40d1280" prefix=" " category="inline-code"></block>CRを削除しても取り消すことはできません。アクセスを取り消すには、従属PVCを削除する必要があります。</block>
   <block id="3908892c437778f8b161a2ca006782cd" category="list-text">従属ボリュームではスナップショット、クローン、ミラーリングは実行できません。</block>
   <block id="8ff961668c6784e84b25c265cbb629d7" category="paragraph">クロスネームスペースボリュームアクセスの詳細については、次を参照してください：</block>
-  <block id="f1cfea5f1444de607dfa549b3aa57010" category="inline-link-macro">名前空間間でボリュームを共有する：クロスネームスペースボリュームアクセスの実現</block>
-  <block id="2780f690b7670efc296ac19ef3029d0c" category="list-text"><block ref="b0d29f1b2abb2cc552e4cc47177582ef" category="inline-link-macro-rx"></block>にアクセスしてください。</block>
   <block id="96e1384807331548bf745acde0fe1b73" category="inline-link-macro">NetAppTV</block>
   <block id="5ff83dbc70e496ea22b38ea61bb69f05" category="list-text"><block ref="c27441bbbe62adf51ae6ecec41fde8bd" category="inline-link-macro-rx"></block>でデモをご覧ください。</block>
   <block id="821b0ad941ad2559ef18eb8de56a470e" category="summary">Kubernetes クラスター内のすべてのワーカーノードは、ポッド用にプロビジョニングしたボリュームをマウントできる必要があります。バックエンドの 1 つに ontap-nas、ontap-nas-economy、ontap-nas-flexgroup ドライバーを使用している場合は、ワーカーノードに NFS ツールが必要です。それ以外の場合は、iSCSI ツールが必要です。</block>
@@ -5949,7 +5918,6 @@
   <block id="d356d628089d439d75e3f85564372658" category="list-text">tridentctlでインストール</block>
   <block id="27e9bd9989c090489f69126b9910d7d8" category="list-text">各バックエンドごとにデバッグログを取得するには、バックエンド定義に<block ref="effa2d809c72dcb6cce15a1e0b040e63" prefix=" " category="inline-code"></block>を含めることもできます。例えば、TridentログでAPIコールやメソッドのトラバーサルを取得するには、<block ref="825a719baa5b5b7445c98535815fac39" prefix=" " category="inline-code"></block>を含めてください。既存のバックエンドには、<block ref="effa2d809c72dcb6cce15a1e0b040e63" prefix=" " category="inline-code"></block>を<block ref="ad782b779edfd8199198bed41b3e3b6b" prefix=" " category="inline-code"></block>で設定できます。</block>
   <block id="3992b498f2510c20f4dc0df9804e6038" category="list-text">Red Hat Enterprise Linux CoreOS (RHCOS)を使用する場合は、<block ref="3fe4dc8de876aca2c78fa0cd9c6d0b65" prefix=" " category="inline-code"></block>がワーカーノードで有効になっており、デフォルトで起動されていることを確認してください。これは、OpenShift MachineConfigsを使用するか、ignitionテンプレートを変更することで実行できます。</block>
-  <block id="154244be43a4ba50080a256f5657b29a" category="list-text">Tridentを<block ref="4568986ef6397d7c901269fc0e190ede" category="inline-link-rx"></block>で使用する際に発生する可能性のある一般的な問題は、テナントシークレットとクライアントシークレットが、権限が不十分なアプリ登録から取得された場合です。Trident要件の完全なリストについては、<block ref="afedf4ee56554ea6e6b54e6aa206680c" category="inline-link-macro-rx"></block>構成を参照してください。</block>
   <block id="7f0ecdfa510b31b01d331c2760643b83" category="list-text">PVをコンテナにマウントする際に問題がある場合は、<block ref="7a31649dd02ecf0349542b72f9d5ef54" prefix=" " category="inline-code"></block>がインストールされ実行されていることを確認してください。ホストOSに必要なパッケージマネージャーを使用して、<block ref="7a31649dd02ecf0349542b72f9d5ef54" prefix=" " category="inline-code"></block>が実行中かどうかを確認してください。<block ref="7a31649dd02ecf0349542b72f9d5ef54" prefix=" " category="inline-code"></block>サービスのステータスは、<block ref="461bc51ac38341d1d2fdae2e84bc6e47" prefix=" " category="inline-code"></block>またはそれと同等のものを実行することで確認できます。</block>
   <block id="78aeadc89feb4cf244398a7d35a0d656" category="list-text">Tridentバックエンドが以前は動作していたにもかかわらず<block ref="26934eb377001f66e37289a5c93fe284" prefix=" " category="inline-code"></block>状態であると報告する場合は、バックエンドに関連付けられたSVM/管理者の資格情報が変更されたことが原因である可能性があります。<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>を使用してバックエンド情報を更新するか、Tridentポッドをバウンスすることで、この問題は解決されます。</block>
   <block id="b851cfc28cd6e5cb9aaf87bdb59a68aa" category="list-text">コンテナランタイムとしてDockerを使用してTridentをインストールする際に権限の問題が発生した場合は、<block ref="acbc9344b624715d4749280f7e4a5b49" prefix=" " category="inline-code"></block>フラグを使用してTridentのインストールを試みてください。これにより、インストーラポッドが使用されず、<block ref="c84ef67352bb6783ff2881f9f2821c2a" prefix=" " category="inline-code"></block>ユーザーが原因で発生する権限の問題を回避できます。</block>
@@ -6066,4 +6034,34 @@
   <block id="5566fd919e0cd2daefbf9fbd55ec09e3" category="list-text">*spec.appArchivePath*：（必須）AppVault内のバックアップコンテンツが保存されるパス。ステップ2のコマンドを使用してバックアップの内容を表示し、復元するバックアップの<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>を確認します。</block>
   <block id="053aba80de03f3fdf626d1c858342330" category="list-text">AppVault名前とアーカイブパスを使用して、アプリケーションをデスティネーション クラスタに復元します：</block>
   <block id="a1d573518c6d239a09cfdd19537e0944" category="admonition">CRを使用する場合は、アプリケーションのリストアに使用する名前空間がデスティネーション クラスタに存在することを確認してください。</block>
+  <block id="2a67362171e1d0d492a240f46aa40f9d" category="paragraph">はい、Tridentはオフラインでインストールできます。<block ref="13e08204659655d31384fe879b641070" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="f7cfad1a7aa4eef27196fb6e10521019" category="paragraph">Tridentインストーラは、KubernetesのClusterRoleを作成します。これにより、KubernetesクラスタのPersistentVolume、PersistentVolumeClaim、StorageClass、およびSecretリソースへの特定のアクセス権が付与されます。<block ref="6993fa1aa5a98c9b8d5b482911a027b4" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="5aa6b4fdc35400fce52390c7587041e5" category="paragraph">必要に応じて、Tridentがインストールに使用する正確なマニフェストファイルをローカルで生成および変更できます。<block ref="6993fa1aa5a98c9b8d5b482911a027b4" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="bd36045805a85f9665960a0f6f9e955f" category="list-text"><block ref="bd36045805a85f9665960a0f6f9e955f" category="inline-link-macro-rx"></block></block>
+  <block id="714ad635b7b855ea6b214ed7b344a93a" category="paragraph">Cloud Volumes ONTAPは、クラウド上でONTAPデータ管理ソフトウェアを実行するソフトウェア型のストレージ アプライアンスです。Cloud Volumes ONTAPは、本番ワークロード、ディザスタリカバリ、DevOps、ファイル共有、およびデータベース管理に使用できます。ストレージ効率、高可用性、データレプリケーション、データ階層化、アプリケーションの一貫性を提供することで、エンタープライズストレージをクラウドへと拡張します。</block>
+  <block id="6a76361978180e6579cdf8f094e90ab5" category="paragraph"><block ref="edd2b7aa1c7509676e2980018fef6c49" category="inline-link-rx"></block>は、オールフラッシュのパフォーマンスで NFS を介して NAS ボリュームを提供するクラウドネイティブファイルサービスです。このサービスを利用することで、レガシーアプリケーションを含むあらゆるワークロードを GCP クラウド上で実行できます。このサービスは、一貫した高いパフォーマンス、即時クローン作成、データ保護、および Google Compute Engine (GCE) インスタンスへの安全なアクセスを提供する、完全マネージドサービスです。</block>
+  <block id="14ede6648ba5d3900803ea9064ea6f98" category="paragraph">Tridentをインストールして、数ステップでストレージリソースの管理を開始できます。開始する前に、<block ref="6004af307fc2eed554c42ebaa4be8446" category="inline-link-macro-rx"></block>を確認してください。</block>
+  <block id="365f044223bbae18d908189b4742ff4c" category="paragraph"><block ref="365f044223bbae18d908189b4742ff4c" category="inline-link-macro-rx"></block></block>
+  <block id="dde53589c85fa1215e4a3d3c3a0d6508" category="paragraph"><block ref="90e03a843b5d1f923d0ef6b32fbf11b0" category="inline-link-macro-rx"></block>を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。</block>
+  <block id="432cd8287366758f4223f1c5245523ef" category="paragraph"><block ref="cb461850825fa08fd17f7c70933db3ad" category="inline-link-macro-rx"></block>に加えて<block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>が必要です。</block>
+  <block id="e9d36c266026dc04d43783120d0a2d1d" category="paragraph">Linux ホストにログインし、正常に動作している<block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>を管理していること、および必要な権限があることを確認します。</block>
+  <block id="6e0142dfd4a5236fbce5c22e4e30fc2b" category="paragraph">インストールを始める前に、Linuxホストにログインし、正常に動作している<block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>を管理していること、および必要な権限を持っていることを確認します。</block>
+  <block id="d88223d773f28ccdf21626fa17114e63" category="admonition">インストーラが正常に完了しない場合、または<block ref="ce3abad3e11d6a43c5178e20a0c7d64b" prefix=" " category="inline-code"></block> <block ref="2903817a25b5de1e17a06122d71c5cf9" prefix="(" category="inline-code"></block>（23.01より前のバージョン）が*Running*ステータスでない場合、プラットフォームはインストールされていません。<block ref="9b017020b9d48d433ec90c548e6b5c70" prefix=" " category="inline-code"></block>を使用して<block ref="0c26927b9a8e07f011a7bc7653213d74" category="inline-link-macro-rx"></block>問題のトラブルシューティングを行います。</block>
+  <block id="799c345f132bca7bd3f7831646af862a" category="list-text">サポートされているバージョンの Kubernetes を実行し、機能要件が有効になっている、サポートされている Kubernetes クラスターに対する完全な権限。詳細については、<block ref="6fc1811f5f9a8ae54793544600e2dff7" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="ddc804456e223eff8456798dc590ef65" category="admonition"><block ref="ccab18d1a43947a3cd56552efe5cb44e" category="inline-link-macro-rx"></block>にまだ慣れていない場合は、今こそそれを実行する絶好の機会です。</block>
+  <block id="52c58f553a5ef6874859d0bf137653fc" category="paragraph">適切なインストール方法を選択してください。決定を下す前に<block ref="8566ad2be80f530306673ceb0a701406" category="inline-link-macro-rx"></block>の考慮事項も確認する必要があります。</block>
+  <block id="3414d76eecba8d4a7dd3caeee51a228e" category="paragraph">手動でのデプロイでもHelmを使用する場合でも、Tridentオペレーターはインストールを簡素化し、Tridentリソースを動的に管理する優れた方法です。さらに、<block ref="68a5e6b16e315077f5a728df34950477" category="inline-link-macro-rx"></block>は、<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>カスタムリソース（CR）の属性を使用して行うこともできます。</block>
+  <block id="778f8fc1f45a4176e0a6dc6c0c8048d8" category="paragraph">Trident のインストールとアップグレードの多くの<block ref="2b6c752c2a0adaf915d24df45e6dabc3" category="inline-link-macro-rx"></block>の 1 つは、既存のマウントされたボリュームを中断することなく、Trident と Kubernetes オブジェクトを自動的に処理することです。このようにして、Trident はダウンタイムなしでアップグレードをサポートできます。または<block ref="c0fb6b6f12bb8ae805a97690328ec023" category="inline-link-macro-rx"></block>。特に、Trident オペレーターは Kubernetes クラスターと通信して次の操作を行います（：）</block>
+  <block id="c4ca8360dfbe09e499694a13ac8fc34c" category="paragraph">Trident オペレーターを使用して、手動または Helm を使用して Trident をアップグレードできます。Trident オペレーターのインストールから別の Trident オペレーターのインストールにアップグレードすることも、<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>のインストールから Trident オペレーターバージョンにアップグレードすることもできます。Trident オペレーターのインストールをアップグレードする前に<block ref="ad3ae3ba576f54a9ed86202bbeedc293" category="inline-link-macro-rx"></block>を確認してください。</block>
+  <block id="c39b4b2690198076ba45bbb6e7eec555" category="list-text"><block ref="4cb6ea02341de02a01b7d090723c78e1" category="inline-link-macro-rx"></block>の場合は、<block ref="9ba27131bd1269499334744b89769fac" prefix=" " category="inline-code"></block>を使用してワンステップでアップグレードできます。Helmリポジトリを追加していない場合、またはアップグレードに使用できない場合：</block>
+  <block id="8edaa40191fd981b339b65738ae96ecc" category="admonition">インストール方法を切り替える前に、<block ref="d9897dfd3f891279098b72584e2caa99" category="inline-link-macro-rx"></block>を確認してください。</block>
+  <block id="a91a374e8f989d015a82975728b4b552" category="paragraph">通常は、最初のインストールと同じ方法でアップグレードする必要がありますが、<block ref="be81b6c3db35f66680ab7fc08ff1a8b2" category="inline-link-macro-rx"></block>。Trident をアップグレードするには 2 つのオプションがあります。</block>
+  <block id="7ba0dd834b932c7125765a293d38c4f6" category="paragraph"><block ref="ad3ae3ba576f54a9ed86202bbeedc293" category="inline-link-macro-rx"></block>を使用してアップグレードする前に<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>を確認してください。</block>
+  <block id="42f5a8a8d0da0554baf08f4dadadd8cc" category="list-text">Trident を再インストールします。<block ref="64e580b28451084913f93b8afd1bcdce" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="dd5714ad50e5cf2d788e239e1b8c6c6d" category="inline-link-macro">カスタムノードヘルスチェックソリューションの統合</block>
+  <block id="90b138b6a758a26dc3e5e4d1b09e0fa0" category="admonition">以下の<block ref="1d8f3a05b03ef442fe310de66a552bf4" category="inline-link-macro-rx"></block>セクションで指定されている別の方法を使用して、ノード障害を検出することもできます。</block>
+  <block id="34097d18bbaaadf5ab96f009ad9e612a" category="inline-link">初期設定後のアップデート&lt;block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category='inline-code'/&gt;</block>
+  <block id="7011d1effc2f982a1f137b30ee928210" category="cell">プロトコル LIF の IP アドレス。*ONTAP NAS ドライバー*：NetApp では dataLIF を指定することを推奨しています。指定しない場合、 Trident は SVM から dataLIF を取得します。NFS マウント操作に使用する完全修飾ドメイン名（ FQDN ）を指定できます。これにより、複数の dataLIF 間で負荷を分散するラウンドロビン DNS を作成できます。初期設定後に変更できます。<block ref="ac2d8c56a59b5d335127676599f45b62" category="inline-link-rx"></block>を参照してください。*ONTAP SAN ドライバー*： iSCSI には指定しないでください。Trident は ONTAP Selective LUN Map を使用して、マルチパス セッションの確立に必要な iSCI LIF を検出します。dataLIF が明示的に定義されている場合は警告が生成されます。TridentをIPv6フラグを使用してインストールした場合、IPv6アドレスを使用するように設定できます。IPv6アドレスは、［28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555］のように角括弧で定義する必要があります。</block>
+  <block id="316d0b2e5d414d5d784b53539fdf8a25" category="list-text">Trident は、 Windows ノード上で実行されているポッドにマウントされた SMB ボリュームのみをサポートします。詳細については、<block ref="fc86597dbee216d52b5cd3ebf69f85ac" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="74a8654521417ab6819a6646f56af88e" category="list-text">Tridentを<block ref="24a785881ff1cdf191a2239811dc9597" category="inline-link-rx"></block>で使用する際に発生する可能性のある一般的な問題は、テナントシークレットとクライアントシークレットが、権限が不十分なアプリ登録から取得された場合です。Trident要件の完全なリストについては、<block ref="66af37d4cd76f6bfef0a6d433e8dccd6" category="inline-link-macro-rx"></block>構成を参照してください。</block>
 </blocks>

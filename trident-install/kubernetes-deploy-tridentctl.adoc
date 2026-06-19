@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy-tridentctl.html 
+permalink: trident-install/kubernetes-deploy-tridentctl.html 
 keywords: deploy, Trident, methods, tridentctl, windows 
 summary: 'Tridentは `tridentctl`を使用してインストールできます。このプロセスは、Tridentで必要なコンテナイメージがプライベートレジストリに保存されている場合とそうでない場合の両方のインストールに適用されます。' 
 ---
@@ -35,10 +35,10 @@ Tridentは `tridentctl`を使用してインストールできます。このプ
 
 == Tridentを使用してインストール `tridentctl`
 
-link:../trident-get-started/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
+link:../trident-install/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
 
 .開始する前に
-インストールを始める前に、Linuxホストにログインし、正常に動作しているlink:requirements.html["サポートされている Kubernetes クラスター"^]を管理していること、および必要な権限を持っていることを確認します。
+インストールを始める前に、Linuxホストにログインし、正常に動作しているlink:../trident-get-started/requirements.html["サポートされている Kubernetes クラスター"]を管理していること、および必要な権限を持っていることを確認します。
 
 
 NOTE: OpenShift では、以下のすべての例で `oc` を `kubectl` の代わりに使用し、最初に `oc login -u system:admin` または `oc login -u kube-admin` を実行して *system:admin* としてログインしてください。
@@ -151,7 +151,7 @@ trident-controller-679648bd45-cv2mx   6/6     Running   0          5m29s
 trident-node-linux-vgc8n              2/2     Running   0          5m29s
 ----
 
-NOTE: インストーラが正常に完了しない場合、または `trident-controller-<generated id>` (`trident-csi-<generated id>`（23.01より前のバージョン）が*Running*ステータスでない場合、プラットフォームはインストールされていません。 `-d`を使用してlink:../troubleshooting.html#troubleshooting-an-unsuccessful-trident-deployment-using-tridentctl["デバッグモードをオンにする"]問題のトラブルシューティングを行います。
+NOTE: インストーラが正常に完了しない場合、または `trident-controller-<generated id>` (`trident-csi-<generated id>`（23.01より前のバージョン）が*Running*ステータスでない場合、プラットフォームはインストールされていません。 `-d`を使用してlink:../troubleshooting.html#unsuccessful-trident-deployment-using-tridentctl["デバッグモードをオンにする"]問題のトラブルシューティングを行います。
 
 
 

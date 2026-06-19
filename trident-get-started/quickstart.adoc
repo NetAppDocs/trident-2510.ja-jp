@@ -12,7 +12,7 @@ summary: Kubernetes を使い始めたばかりの場合は、手順に従って
 
 
 [role="lead"]
-Tridentをインストールして、数ステップでストレージリソースの管理を開始できます。開始する前に、link:requirements.html["Tridentの要件"]を確認してください。
+Tridentをインストールして、数ステップでストレージリソースの管理を開始できます。開始する前に、link:../trident-get-started/requirements.html["Tridentの要件"]を確認してください。
 
 
 NOTE: Dockerについては、link:../trident-docker/deploy-docker.html["Docker向けTrident"]を参照してください。
@@ -29,7 +29,7 @@ link:../trident-use/worker-node-prep.html["ワーカーノードを準備する"
 Trident は、さまざまな環境や組織に最適化された複数のインストール方法とモードを提供します。
 
 [role="quick-margin-para"]
-link:../trident-get-started/kubernetes-deploy.html["Tridentをインストール"]
+link:../trident-install/kubernetes-deploy.html["Tridentをインストール"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] バックエンドを作成する
 [role="quick-margin-para"]

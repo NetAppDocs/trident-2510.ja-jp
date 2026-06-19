@@ -25,9 +25,9 @@ indexpage:
   - title: Tridentを導入
     links:
     - title: Tridentオペレーターを使用した導入
-      url: "/trident-get-started/kubernetes-deploy-operator.html"
+      url: "/trident-install/kubernetes-deploy-operator.html"
     - title: tridentctl でデプロイする
-      url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+      url: "/trident-install/kubernetes-deploy-tridentctl.html"
     - title: Docker用Tridentを導入する
       url: "/trident-docker/deploy-docker.html"
   - title: Tridentのアップグレード

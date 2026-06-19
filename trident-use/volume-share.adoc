@@ -170,6 +170,5 @@ Usage:
 
 クロスネームスペースボリュームアクセスの詳細については、次を参照してください：
 
-* link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["名前空間間でボリュームを共有する：クロスネームスペースボリュームアクセスの実現"^]にアクセスしてください。
 * link:https://media.netapp.com/page/9071d19d-1438-5ed3-a7aa-ea4d73c28b7f/solutions-products["NetAppTV"^]でデモをご覧ください。
 

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy-operator.html 
+permalink: trident-install/kubernetes-deploy-operator.html 
 keywords: deploy, Trident, methods, operator, tridentctl, registry, registries 
 summary: Tridentオペレーターを手動で導入してTridentをインストールできます。このプロセスは、Tridentで必要なコンテナイメージがプライベートレジストリに保存されていないインストールに適用されます。 
 ---
@@ -38,10 +38,10 @@ Tridentオペレーターを手動で導入してTridentをインストールで
 
 == Tridentオペレーターを手動で展開してTridentをインストールする
 
-link:../trident-get-started/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
+link:../trident-install/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
 
 .開始する前に
-インストールを始める前に、Linuxホストにログインし、正常に動作しているlink:requirements.html["サポートされている Kubernetes クラスター"^]を管理していること、および必要な権限を持っていることを確認します。
+インストールを始める前に、Linuxホストにログインし、正常に動作しているlink:../trident-get-started/requirements.html["サポートされている Kubernetes クラスター"]を管理していること、および必要な権限を持っていることを確認します。
 
 
 NOTE: OpenShift では、以下のすべての例で `oc` を `kubectl` の代わりに使用し、最初に `oc login -u system:admin` または `oc login -u kube-admin` を実行して *system:admin* としてログインしてください。

@@ -153,7 +153,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 | `managementLIF` | クラスタまたはSVM管理LIFのIPアドレス（完全修飾ドメイン名（FQDN）も指定可能）TridentをIPv6フラグを使用してインストールした場合、IPv6アドレスを使用するように設定できます。IPv6アドレスは、［28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555］のように角括弧で定義する必要があります。もし `fsxFilesystemID`を `aws`フィールドの下で指定した場合、 `managementLIF`を指定する必要はありません。なぜならTridentがAWSからSVM `managementLIF`情報を取得するためです。したがって、SVM配下のユーザー（例：vsadmin）の認証情報を必ず指定し、そのユーザーが `vsadmin`ロールを持っている必要があります。 | "10.0.0.1"、"[2001:1234:abcd::fefe]" 
 
 
-| `dataLIF` | プロトコル LIF の IP アドレス。*ONTAP NAS ドライバー*：NetApp では dataLIF を指定することを推奨しています。指定しない場合、 Trident は SVM から dataLIF を取得します。NFS マウント操作に使用する完全修飾ドメイン名（ FQDN ）を指定できます。これにより、複数の dataLIF 間で負荷を分散するラウンドロビン DNS を作成できます。初期設定後に変更できます。を参照してください。*ONTAP SAN ドライバー*： iSCSI には指定しないでください。Trident は ONTAP Selective LUN Map を使用して、マルチパス セッションの確立に必要な iSCI LIF を検出します。dataLIF が明示的に定義されている場合は警告が生成されます。Trident が IPv6 フラグを使用してインストールされている場合は、 IPv6 アドレスを使用するように設定できます。IPv6 アドレスは、 [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555] のように角括弧で定義する必要があります。 |  
+| `dataLIF` | プロトコル LIF の IP アドレス。*ONTAP NAS ドライバー*：NetApp では dataLIF を指定することを推奨しています。指定しない場合、 Trident は SVM から dataLIF を取得します。NFS マウント操作に使用する完全修飾ドメイン名（ FQDN ）を指定できます。これにより、複数の dataLIF 間で負荷を分散するラウンドロビン DNS を作成できます。初期設定後に変更できます。を参照してください。*ONTAP SAN ドライバー*： iSCSI には指定しないでください。Trident は ONTAP Selective LUN Map を使用して、マルチパス セッションの確立に必要な iSCI LIF を検出します。dataLIF が明示的に定義されている場合は警告が生成されます。TridentをIPv6フラグを使用してインストールした場合、IPv6アドレスを使用するように設定できます。IPv6アドレスは、［28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555］のように角括弧で定義する必要があります。 |  
 
 
 | `autoExportPolicy` | 自動エクスポート ポリシーの作成と更新を有効にします [ブール値]。 `autoExportPolicy`および `autoExportCIDRs`オプションを使用すると、Tridentはエクスポート ポリシーを自動的に管理できます。 | `false` 

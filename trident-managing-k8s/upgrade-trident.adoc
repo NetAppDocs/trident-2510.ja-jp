@@ -73,7 +73,7 @@ NOTE: OpenShift Container Platform で Trident オペレーターを使用して
 
 == ステップ3：アップグレード方法を選択する
 
-通常は、最初のインストールと同じ方法でアップグレードする必要がありますが、link:../trident-get-started/kubernetes-deploy.html#moving-between-installation-methods["インストール方法を切り替える"]。Trident をアップグレードするには 2 つのオプションがあります。
+通常は、最初のインストールと同じ方法でアップグレードする必要がありますが、link:../trident-install/kubernetes-deploy.html#moving-between-installation-methods["インストール方法を切り替える"]。Trident をアップグレードするには 2 つのオプションがあります。
 
 * link:upgrade-operator.html["Tridentオペレータを使用してアップグレードする"]
 +
