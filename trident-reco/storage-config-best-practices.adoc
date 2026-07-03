@@ -274,7 +274,7 @@ SolidFire のサービス品質（QoS）ポリシーは、多くのボリュー�
 
 NOTE: 最大 IOPS とバースト IOPS は最大 200,000 まで設定できますが、ボリュームの実際の最大パフォーマンスは、クラスターの使用状況とノードごとのパフォーマンス レベルによって制限されます。
 
-ブロック サイズと帯域幅は IOPS の数に直接影響します。ブロック サイズが大きくなるにつれて、システムはより大きなブロック サイズを処理するために必要なレベルまで帯域幅を増加させます。帯域幅が増加すると、システムが達成できる IOPS の数は減少します。QoS とパフォーマンスの詳細については、 https://www.netapp.com/pdf.html?item=/media/10502-tr-4644pdf.pdf["SolidFire のサービス品質"^]を参照してください。
+ブロックサイズと帯域幅は、IOPS数に直接的な影響を与えます。ブロックサイズが大きくなるにつれて、システムはより大きなブロックサイズを処理するために必要なレベルまで帯域幅を増加させます。帯域幅が増加すると、システムが達成できるIOPS数は減少します。QoS とパフォーマンスの詳細については、 https://www.netapp.com/pdf.html?item=/media/10502-tr-4644.pdf["SolidFire のサービス品質"^]を参照してください。
 
 
 
@@ -304,7 +304,7 @@ CHAP 認証（イニシエーターが意図したボリューム ユーザー�
 
 *Element ソフトウェア*
 
-* https://www.netapp.com/pdf.html?item=/media/10507-tr4639pdf.pdf["Linux用SolidFireの設定"^]
+* https://www.netapp.com/pdf.html?item=/media/10507-tr4639.pdf["Linux用SolidFireの設定"^]
 
 
 *NetApp HCI*
@@ -317,9 +317,9 @@ CHAP 認証（イニシエーターが意図したボリューム ユーザー�
 
 * https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html["ONTAP上のMySQLのベストプラクティス"^]
 * https://www.netapp.com/pdf.html?item=/media/10510-tr-4605.pdf["SolidFire での MySQL のベストプラクティス"^]
-* https://www.netapp.com/pdf.html?item=/media/10513-tr-4635pdf.pdf["NetApp SolidFire と Cassandra"^]
-* https://www.netapp.com/pdf.html?item=/media/10511-tr4606pdf.pdf["SolidFire での Oracle のベストプラクティス"^]
-* https://www.netapp.com/pdf.html?item=/media/10512-tr-4610pdf.pdf["SolidFire での PostgreSQL のベストプラクティス"^]
+* https://www.netapp.com/pdf.html?item=/media/10513-tr-4635.pdf["NetApp SolidFire と Cassandra"^]
+* https://www.netapp.com/pdf.html?item=/media/10511-tr4606.pdf["SolidFire での Oracle のベストプラクティス"^]
+* https://www.netapp.com/pdf.html?item=/media/10512-tr-4610.pdf["SolidFire での PostgreSQL のベストプラクティス"^]
 
 
 すべてのアプリケーションに特定のガイドラインがあるわけではないため、NetApp チームと協力し、 https://www.netapp.com/search/["NetApp ライブラリ"^]を使用して最新のドキュメントを見つけることが重要です。

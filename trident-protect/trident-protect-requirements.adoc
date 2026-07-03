@@ -35,7 +35,7 @@ Trident Protect は、以下を含む幅広いフルマネージドおよびセ�
 ====
 * Trident Protect バックアップは Linux コンピューティング ノードでのみサポートされます。Windows コンピューティング ノードはバックアップ操作ではサポートされていません。
 * Trident Protect をインストールするクラスタが、実行中のスナップショット コントローラと関連する CRD で構成されていることを確認してください。スナップショット コントローラをインストールするには、 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["これらの手順"]を参照してください。
-* 少なくとも1つのVolumeSnapshotClassが存在することを確認してください。詳細については、link:https://docs.netapp.com/us-en/trident_main/trident-reference/objects.html#kubernetes-volumesnapshotclass-objects["VolumeSnapshotClass"]を参照してください。
+* 少なくとも1つのVolumeSnapshotClassが存在することを確認してください。詳細については、link:../trident-reference/objects.html#kubernetes-volumesnapshotclass-objects["VolumeSnapshotClass"]を参照してください。
 * Trident Protect をインストールするには Helm 4.x 以降が必要です。
 
 

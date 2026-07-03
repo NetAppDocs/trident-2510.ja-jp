@@ -296,7 +296,7 @@ NOTE:  `ontap-nas-economy`ドライバは、Docker Swarmが複数のノードに
 * クローニングはFlexGroupボリュームではサポートされていません。
 
 
-FlexGroupsおよびFlexGroupsに適したワークロードの詳細については、 https://www.netapp.com/pdf.html?item=/media/12385-tr4571pdf.pdf["NetApp FlexGroupボリュームのベストプラクティスと実装ガイド"^]を参照してください。
+FlexGroupsおよびFlexGroupsに適したワークロードの詳細については、 https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["NetApp FlexGroupボリュームのベストプラクティスと実装ガイド"^]を参照してください。
 
 同じ環境で高度な機能と大規模なスケールを実現するには、Dockerボリュームプラグインの複数のインスタンスを実行することができます。1つは `ontap-nas`を使用し、もう1つは `ontap-nas-economy`を使用します。
 

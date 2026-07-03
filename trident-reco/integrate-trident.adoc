@@ -108,7 +108,7 @@ Amazon FSx for NetApp ONTAP では、使い慣れたNetAppの機能、パフォ�
 
 === Azure NetApp Files バックエンドドライバ
 
-Tridentは `azure-netapp-files`ドライバーを使用してlink:https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^]サービスを管理します。
+Tridentは `azure-netapp-files`ドライバーを使用してlink:https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Files"^]サービスを管理します。
 
 このドライバの詳細と設定方法については、link:https://docs.netapp.com/us-en/trident/trident-use/anf.html["Azure NetApp Files の Trident バックエンド構成"^]を参照してください。
 

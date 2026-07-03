@@ -59,7 +59,7 @@ NetApp HCI は Trident によって完全にサポートされています。Tri
 
 == Azure NetApp Files
 
-https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^]は、NetAppを基盤とするエンタープライズクラスのAzureファイル共有サービスです。NetAppに期待されるパフォーマンスと豊富なデータ管理機能により、最も要求の厳しいファイルベースのワークロードをAzureでネイティブに実行できます。
+https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Files"^]は、NetAppを基盤とするエンタープライズクラスのAzureファイル共有サービスです。NetAppに期待されるパフォーマンスと豊富なデータ管理機能により、最も要求の厳しいファイルベースのワークロードをAzureでネイティブに実行できます。
 
 
 
