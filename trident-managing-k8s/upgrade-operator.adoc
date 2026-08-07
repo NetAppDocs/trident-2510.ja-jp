@@ -16,6 +16,7 @@ Trident オペレーターを使用して、手動または Helm を使用して
 
 
 
+[[upgrade-a-manual-installation]]
 == 手動インストールのアップグレード
 
 クラスタを対象とした Trident オペレータのインストールから、別のクラスタを対象とした Trident オペレータのインストールにアップグレードできます。すべての Trident バージョンでは、クラスタを対象としたオペレータを使用します。
@@ -59,6 +60,7 @@ kubectl create -f 25.06.0/trident-installer/deploy/<bundle.yaml> -n trident
 
 
 
+[[upgrade-a-helm-installation]]
 == Helmインストールのアップグレード
 
 Trident Helm のインストールをアップグレードできます。
@@ -104,6 +106,7 @@ NOTE: 初期インストール時にカスタムオプション（Tridentおよ�
 
 
 
+[[upgrade-from-a-tridentctl-installation-to-trident-operator]]
 ==  `tridentctl`インストールからTridentオペレーターへのアップグレード
 
 Tridentオペレーターの最新リリースには、 `tridentctl`インストールからアップグレードできます。既存のバックエンドとPVCは自動的に利用できるようになります。

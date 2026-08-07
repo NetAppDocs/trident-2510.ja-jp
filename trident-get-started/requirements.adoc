@@ -16,6 +16,7 @@ Tridentをインストールする前に、これらの一般的なシステム�
 
 
 
+[[critical-information-about-trident]]
 == Tridentに関する重要な情報
 
 *Trident に関する以下の重要な情報を必ずお読みください。*
@@ -36,6 +37,7 @@ Tridentをインストールする前に、これらの一般的なシステム�
 ====
 
 
+[[supported-frontends-orchestrators]]
 == サポートされているフロントエンド（オーケストレータ）
 
 Tridentは、次のような複数のコンテナエンジンとオーケストレーターをサポートします：
@@ -63,6 +65,7 @@ WARNING: Tridentがインストールされている Kubernetes クラスター�
 
 
 
+[[supported-backends-storage]]
 == サポートされているバックエンド（ストレージ）
 
 Tridentを使用するには、以下のサポートされているバックエンドの1つ以上が必要です：
@@ -78,6 +81,7 @@ Tridentを使用するには、以下のサポートされているバックエ�
 
 
 
+[[trident-support-for-kubevirt-and-openshift-virtualization]]
 == KubeVirtおよびOpenShift VirtualizationのTridentサポート
 
 .サポートされているストレージドライバー：
@@ -104,6 +108,7 @@ Tridentは、KubeVirtおよびOpenShift VirtualizationについてONTAPドライ
 
 
 
+[[feature-requirements]]
 == 機能の要件
 
 以下の表は、このリリースの Trident で利用可能な機能と、サポートされる Kubernetes のバージョンをまとめたものです。
@@ -170,6 +175,7 @@ Tridentは、KubeVirtおよびOpenShift VirtualizationについてONTAPドライ
 |===
 
 
+[[tested-host-operating-systems]]
 == テスト済みのホストオペレーティングシステム
 
 ただし、Tridentは特定のオペレーティングシステムを公式にサポートしていませんが、以下のオペレーティングシステムは動作することが確認されています：
@@ -191,6 +197,7 @@ NOTE: NVMe/TCP には RHEL 9 以降が必要です。
 
 
 
+[[host-configuration]]
 == ホスト構成
 
 Kubernetes クラスター内のすべてのワーカーノードは、ポッド用にプロビジョニングしたボリュームをマウントできる必要があります。ワーカーノードを準備するには、ドライバーの選択に基づいて NFS、iSCSI、または NVMe ツールをインストールする必要があります。
@@ -199,6 +206,7 @@ link:../trident-use/worker-node-prep.html["ワーカーノードを準備する"
 
 
 
+[[storage-system-configuration]]
 == ストレージシステムの構成
 
 Tridentでは、バックエンド構成でストレージシステムを使用する前に、ストレージシステムの変更が必要になる場合があります。
@@ -207,6 +215,7 @@ link:../trident-use/backends.html["バックエンドを設定"]
 
 
 
+[[trident-ports]]
 == Tridentポート
 
 Tridentが通信するには、特定のポートへのアクセスが必要です。
@@ -215,12 +224,14 @@ link:../trident-reference/ports.html["Tridentポート"]
 
 
 
+[[container-images-and-corresponding-kubernetes-versions]]
 == コンテナイメージと対応する Kubernetes バージョン
 
 エアギャップインストールの場合、次のリストはTridentのインストールに必要なコンテナイメージのリファレンスです。 `tridentctl images`コマンドを使用して、必要なコンテナイメージのリストを確認します。
 
 
 
+[[container-images-required-for-trident-25-10]]
 === Trident 25.10に必要なコンテナイメージ
 
 [cols="2"]

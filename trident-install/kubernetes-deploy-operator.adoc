@@ -16,6 +16,7 @@ Tridentオペレーターを手動で導入してTridentをインストールで
 
 
 
+[[critical-information-about-trident-25-10]]
 == Trident 25.10に関する重要な情報
 
 *Trident に関する以下の重要な情報を必ずお読みください。*
@@ -36,6 +37,7 @@ Tridentオペレーターを手動で導入してTridentをインストールで
 ====
 
 
+[[manually-deploy-the-trident-operator-and-install-trident]]
 == Tridentオペレーターを手動で展開してTridentをインストールする
 
 link:../trident-install/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
@@ -72,6 +74,7 @@ kubectl run -i --tty ping --image=busybox --restart=Never --rm -- \
 ====
 
 
+[[step-1-download-the-trident-installer-package]]
 === ステップ1：Tridentインストーラーパッケージをダウンロードする
 
 Trident インストーラー パッケージには、Trident オペレーターを導入して Trident をインストールするために必要なものがすべて含まれています。link:https://github.com/NetApp/trident/releases/latest["GitHub の _Assets_ セクション"^]から最新バージョンの Trident インストーラーをダウンロードして解凍します。
@@ -84,6 +87,7 @@ cd trident-installer
 ----
 
 
+[[step-2-create-the-tridentorchestrator-crd]]
 === ステップ2： `TridentOrchestrator` CRDを作成する
 
  `TridentOrchestrator`カスタムリソース定義（CRD）を作成します。後で `TridentOrchestrator`カスタムリソースを作成します。 `deploy/crds`で適切なCRD YAMLバージョンを使用して `TridentOrchestrator`CRDを作成します。
@@ -94,6 +98,7 @@ kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.1
 ----
 
 
+[[step-3-deploy-the-trident-operator]]
 === ステップ3：Tridentオペレーターを導入する
 
 Tridentインストーラーは、オペレーターをインストールし、関連オブジェクトを作成するために使用できるバンドル ファイルを提供します。バンドル ファイルは、オペレーターを導入し、デフォルト設定を使用してTridentをインストールする簡単な方法です。
@@ -147,6 +152,7 @@ IMPORTANT: Kubernetes クラスターにはオペレーターのインスタン�
 
 
 
+[[step-4-create-the-tridentorchestrator-and-install-trident]]
 === ステップ4： `TridentOrchestrator`を作成してTridentをインストールする
 
 これで `TridentOrchestrator`を作成し、Tridentをインストールできます。オプションで、link:kubernetes-customize-deploy.html["Tridentインストールをカスタマイズ"]を `TridentOrchestrator`仕様の属性を使って行うこともできます。
@@ -195,12 +201,14 @@ Events:
 ----
 
 
+[[verify-the-installation]]
 == インストールの確認
 
 インストールを確認する方法はいくつかあります。
 
 
 
+[[using-tridentorchestrator-status]]
 ===  `TridentOrchestrator`ステータスの使用
 
  `TridentOrchestrator`のステータスは、インストールが成功したかどうかを示し、インストールされた Trident のバージョンを表示します。インストール中、 `TridentOrchestrator`のステータスは `Installing`から `Installed`に変わります。 `Failed`ステータスが表示され、オペレータが自己修復できない場合は、link:../troubleshooting.html["ログを確認する"]。
@@ -233,6 +241,7 @@ Events:
 |===
 
 
+[[using-pod-creation-status]]
 === ポッド作成ステータスの使用
 
 作成されたポッドのステータスを確認することで、Tridentのインストールが完了したかどうかを確認できます：
@@ -250,6 +259,7 @@ trident-operator-766f7b8658-ldzsv          1/1     Running   0           3m
 ----
 
 
+[[using-tridentctl]]
 === 使用 `tridentctl`
 
  `tridentctl`を使用して、インストールされているTridentのバージョンを確認できます。

@@ -16,6 +16,7 @@ Trident 構成で使用可能な設定オプションを参照してください
 
 
 
+[[global-configuration-options]]
 == グローバル設定オプション
 
 これらの設定オプションは、使用されているストレージプラットフォームに関係なく、すべてのTrident構成に適用されます。
@@ -71,6 +72,7 @@ TIP:  `storagePrefix`（デフォルトを含む）は Element バックエン�
 |===
 
 
+[[ontap-configuration]]
 == ONTAP の設定
 
 上記のグローバル設定値に加えて、ONTAPを使用する場合は、次の最上位オプションが利用可能です。
@@ -274,6 +276,7 @@ SANオプションでファイルシステムのタイプを選択します。�
 |===
 
 
+[[scaling-options]]
 === スケーリングオプション
 
  `ontap-nas`および `ontap-san`ドライバーは、Docker ボリュームごとに ONTAP FlexVol を作成します。ONTAP は、クラスタノードあたり最大 1000 個のFlexVolsをサポートし、クラスタ全体では最大 12,000 個のFlexVolボリュームをサポートします。Docker ボリュームの要件がこの制限内に収まる場合、 `ontap-nas`ドライバーは、Docker ボリューム単位の Snapshot やクローン作成など、FlexVolsが提供する追加機能により、NAS ソリューションとして推奨されます。
@@ -302,6 +305,7 @@ FlexGroupsおよびFlexGroupsに適したワークロードの詳細について
 
 
 
+[[custom-ontap-role-for-trident]]
 === TridentのカスタムONTAP ロール
 
 最小限の権限を持つONTAPクラスタロールを作成することで、Tridentで操作を実行するためにONTAP管理者ロールを使用する必要がなくなります。Tridentバックエンド構成にユーザー名を含めると、Tridentは作成したONTAPクラスタロールを使用して操作を実行します。
@@ -362,6 +366,7 @@ ONTAP System Managerで次の手順を実行します。
 
 
 
+[[example-ontap-configuration-files]]
 === ONTAP設定ファイルの例
 
 .<code>ontap-nas</code> ドライバのNFSの例
@@ -498,6 +503,7 @@ ONTAP System Managerで次の手順を実行します。
 ====
 
 
+[[element-software-configuration]]
 == Element ソフトウェア構成
 
 グローバル設定値に加えて、Element ソフトウェア（NetApp HCI/SolidFire）を使用する場合、これらのオプションが利用可能です。
@@ -552,6 +558,7 @@ QoS仕様
 
 
 
+[[example-element-software-configuration-file]]
 === Element ソフトウェア構成ファイルの例
 
 [source, json]

@@ -16,6 +16,7 @@ summary: ' `kubectl`を使用してバックエンド管理操作を実行する
 
 
 
+[[delete-a-backend]]
 == バックエンドを削除する
 
  `TridentBackendConfig`を削除すると、Tridentに対してバックエンドを削除/保持するように指示します（ `deletionPolicy`に基づく）。バックエンドを削除するには、 `deletionPolicy`がdeleteに設定されていることを確認してください。 `TridentBackendConfig`だけを削除するには、 `deletionPolicy`がretainに設定されていることを確認してください。これにより、バックエンドが引き続き存在し、 `tridentctl`を使用して管理できることが保証されます。
@@ -30,6 +31,7 @@ Tridentは `TridentBackendConfig`で使用されていたKubernetes Secretを削
 
 
 
+[[view-the-existing-backends]]
 == 既存のバックエンドを表示する
 
 次のコマンドを実行します。
@@ -42,6 +44,7 @@ kubectl get tbc -n trident
 
 
 
+[[update-a-backend]]
 == バックエンドを更新する
 
 バックエンドを更新する理由は複数考えられます：

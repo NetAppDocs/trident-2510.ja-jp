@@ -35,12 +35,14 @@ RBACがリソースと名前空間へのアクセスをどのように制御す�
 
 
 
+[[example-manage-access-for-two-groups-of-users]]
 == 例：2つのユーザーグループのアクセスを管理する
 
 たとえば、組織にはクラスタ管理者、エンジニアリングユーザーのグループ、マーケティングユーザーのグループがあります。クラスタ管理者は、エンジニアリンググループとマーケティンググループがそれぞれの名前空間に割り当てられたリソースのみにアクセスできる環境を作成するために、次のタスクを実行します（：）
 
 
 
+[[step-1-create-a-namespace-to-contain-resources-for-each-group]]
 === ステップ1：各グループのリソースを格納する名前空間を作成する
 
 名前空間を作成すると、リソースを論理的に分離し、それらのリソースにアクセスできるユーザーをより適切に制御できるようになります。
@@ -62,6 +64,7 @@ kubectl create ns marketing-ns
 
 
 
+[[step-2-create-new-service-accounts-to-interact-with-resources-in-each-namespace]]
 === ステップ2：各名前空間内のリソースとやり取りするための新しいサービスアカウントを作成する
 
 作成する新しいネームスペースにはそれぞれデフォルトのサービスアカウントが付属しますが、将来必要に応じてグループ間で権限をさらに分割できるように、ユーザーグループごとにサービスアカウントを作成する必要があります。
@@ -91,6 +94,7 @@ metadata:
 
 
 
+[[step-3-create-a-secret-for-each-new-service-account]]
 === ステップ3：新しいサービスアカウントごとにシークレットを作成する
 
 サービスアカウントシークレットは、サービスアカウントでの認証に使用され、侵害された場合には簡単に削除して再作成できます。
@@ -126,6 +130,7 @@ type: kubernetes.io/service-account-token
 
 
 
+[[step-4-create-a-rolebinding-object-to-bind-the-clusterrole-object-to-each-new-service-account]]
 === ステップ4：RoleBindingオブジェクトを作成して、ClusterRoleオブジェクトを各新しいサービスアカウントにバインドします
 
 Trident Protectをインストールすると、デフォルトのClusterRoleオブジェクトが作成されます。このClusterRoleをサービスアカウントにバインドするには、RoleBindingオブジェクトを作成して適用します。
@@ -171,6 +176,7 @@ subjects:
 
 
 
+[[step-5-test-permissions]]
 === ステップ5：権限をテストする
 
 権限が正しいことをテストします。
@@ -192,6 +198,7 @@ kubectl auth can-i --as=system:serviceaccount:engineering-ns:eng-user get applic
 
 
 
+[[step-6-grant-access-to-appvault-objects]]
 === ステップ6：AppVaultオブジェクトへのアクセスを許可する
 
 バックアップやスナップショットなどのデータ管理タスクを実行するには、クラスタ管理者が個々のユーザーにAppVaultオブジェクトへのアクセスを許可する必要があります。

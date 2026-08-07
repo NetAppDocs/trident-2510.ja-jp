@@ -23,12 +23,14 @@ NOTE: AppVault CRがTrident Protectがインストールされているクラス
 
 
 
+[[configure-appvault-authentication-and-passwords]]
 == AppVault認証とパスワードを設定
 
 AppVault CRを作成する前に、AppVaultと選択したデータムーバーがプロバイダおよび関連リソースで認証できることを確認してください。
 
 
 
+[[data-mover-repository-passwords]]
 === データムーバーリポジトリのパスワード
 
 CRやTrident Protect CLIプラグインを使用してAppVaultオブジェクトを作成する際、ResticおよびKopia暗号化用のカスタムパスワードを含むKubernetesシークレットを指定できます。シークレットを指定しない場合、Trident Protectはデフォルトのパスワードを使用します。
@@ -81,6 +83,7 @@ kubectl create secret generic my-optional-data-mover-secret \
 ====
 
 
+[[s3-compatible-storage-iam-permissions]]
 === S3 互換ストレージの IAM 権限
 
 Trident Protectを使用してAmazon S3、Generic S3、 https://docs.netapp.com/us-en/storagegrid/s3/index.html["StorageGrid S3"^]、または https://docs.netapp.com/us-en/ontap/s3-config/["ONTAP S3"^]などのS3互換ストレージにアクセスする場合は、指定するユーザクレデンシャルにバケットへのアクセスに必要な権限があることを確認する必要があります。次に、Trident Protectでアクセスするために必要な最小限の権限を付与するポリシーの例を示します。このポリシーは、S3互換バケットポリシーを管理するユーザに適用できます。
@@ -107,6 +110,7 @@ Amazon S3 ポリシーの詳細については、 https://docs.aws.amazon.com/Am
 
 
 
+[[eks-pod-identity-for-amazon-s3-aws-authentication]]
 === Amazon S3（AWS）認証用のEKS Pod Identity
 
 Trident Protect は、Kopia データ ムーバー操作用の EKS Pod Identity をサポートします。この機能により、Kubernetes シークレットに AWS 認証情報を保存せずに、S3 バケットへの安全なアクセスが可能になります。
@@ -148,6 +152,7 @@ spec:
 ----
 
 
+[[appvault-key-generation-examples-for-cloud-providers]]
 === AppVault クラウド プロバイダ向けのキー生成例
 
 AppVault CR を定義する際には、IAM 認証を使用していない限り、プロバイダによってホストされているリソースにアクセスするための認証情報を含める必要があります。認証情報のキーを生成する方法は、プロバイダによって異なります。以下は、いくつかのプロバイダのコマンドライン キー生成の例です。次の例を使用して、各クラウド プロバイダの認証情報のキーを作成できます。
@@ -215,12 +220,14 @@ kubectl create secret generic <secret-name> \
 ====
 
 
+[[appvault-creation-examples]]
 == AppVault 作成例
 
 以下は、各プロバイダーの AppVault 定義の例です。
 
 
 
+[[appvault-cr-examples]]
 === AppVault CR の例
 
 以下のCRの例を使用して、各クラウド プロバイダのAppVaultオブジェクトを作成できます。
@@ -404,6 +411,7 @@ spec:
 ====
 
 
+[[appvault-creation-examples-using-the-trident-protect-cli]]
 === Trident Protect CLI を使用したAppVault作成例
 
 次の CLI コマンド例を使用して、各プロバイダーの AppVault CR を作成できます。
@@ -493,6 +501,7 @@ tridentctl-protect create vault StorageGridS3 <vault-name> \
 ====
 
 
+[[supported-providerconfig-s3-configuration-options]]
 === サポートされている `providerConfig.s3`設定オプション
 
 S3 プロバイダの構成オプションについては、次の表を参照してください：
@@ -518,6 +527,7 @@ S3 プロバイダの構成オプションについては、次の表を参照�
 |===
 
 
+[[view-appvault-information]]
 == AppVault 情報を表示します
 
 Trident Protect CLI プラグインを使用して、クラスタ上に作成した AppVault オブジェクトに関する情報を表示できます。
@@ -559,6 +569,7 @@ tridentctl-protect get appvaultcontent gcp-vault \
 
 
 
+[[remove-an-appvault]]
 == AppVault を削除します
 
 AppVault オブジェクトはいつでも削除できます。

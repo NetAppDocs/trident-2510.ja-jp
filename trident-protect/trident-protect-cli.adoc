@@ -18,6 +18,7 @@ Trident Protect コマンドライン プラグインを使用できます。こ
 
 
 
+[[install-the-trident-protect-cli-plugin]]
 == Trident Protect CLI プラグインをインストールします
 
 コマンドライン ユーティリティを使用する前に、クラスターにアクセスするために使用するマシンにそれをインストールする必要があります。マシンが x64 と ARM のどちらの CPU を使用しているかに応じて、次の手順に従ってください。
@@ -98,6 +99,7 @@ NOTE: プラグインを PATH 変数の場所にコピーすると、 `tridentct
 
 
 
+[[view-trident-cli-plugin-help]]
 == Trident CLI プラグインのヘルプを表示
 
 プラグインの機能に関する詳細なヘルプを取得するには、組み込みのプラグイン ヘルプ機能を使用できます：
@@ -113,6 +115,7 @@ tridentctl-protect help
 
 
 
+[[enable-command-auto-completion]]
 == コマンドの自動補完を有効にする
 
 Trident Protect CLI プラグインをインストールしたら、特定のコマンドの自動補完を有効にすることができます。

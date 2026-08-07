@@ -16,6 +16,7 @@ Amazon FSx for NetApp ONTAP のバックエンド設定オプションについ�
 
 
 
+[[backend-configuration-options]]
 == バックエンド構成オプション
 
 バックエンド構成オプションについては、次の表を参照してください：
@@ -108,6 +109,7 @@ Amazon FSx for NetApp ONTAP のバックエンド設定オプションについ�
 |===
 
 
+[[update-datalif-after-initial-configuration]]
 === 初期設定後にアップデート `dataLIF`
 
 次のコマンドを実行して、更新された dataLIF を含む新しいバックエンド JSON ファイルを提供することにより、初期構成後に dataLIF を変更できます。
@@ -121,6 +123,7 @@ NOTE: PVC が 1 つまたは複数のポッドに接続されている場合、�
 
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == ボリュームのプロビジョニング用のバックエンド設定オプション
 
 デフォルトのプロビジョニングは、設定の `defaults`セクションにあるこれらのオプションを使用して制御できます。例については、以下の設定例を参照してください。
@@ -154,7 +157,7 @@ NOTE: PVC が 1 つまたは複数のポッドに接続されている場合、�
 | `encryption` | 新しいボリュームでNetApp Volume Encryption（NVE）を有効にします。デフォルトは `false`です。このオプションを使用するには、NVEのライセンスを取得し、クラスタで有効にする必要があります。バックエンドでNAEが有効になっている場合、TridentでプロビジョニングされたボリュームはすべてNAEが有効になります。詳細については、次を参照してください：link:../trident-reco/security-reco.html["Tridentと NVE および NAE の連携"]。 | `false` 
 
 
-| `luksEncryption` | LUKS 暗号化を有効にします。link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["Linux Unified Key Setup（LUKS）を使用する"]を参照してください。SAN のみ。 | "" 
+| `luksEncryption` | LUKS暗号化を有効にします。link:../trident-reco/security-luks.html["Linux Unified Key Setup（LUKS）を使用する"]を参照してください。SANのみ。 | "" 
 
 
 | `tieringPolicy` | 使用する階層化ポリシー	`none` |  
@@ -167,6 +170,7 @@ NOTE: PVC が 1 つまたは複数のポッドに接続されている場合、�
 |===
 
 
+[[example-configurations]]
 == 構成例
 
 .SMB ボリュームのストレージクラスの設定

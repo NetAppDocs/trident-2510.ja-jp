@@ -19,6 +19,7 @@ NOTE: AWS IAM ロールを使用して認証するには、EKS を使用して K
 
 
 
+[[create-aws-secrets-manager-secret]]
 == AWS Secrets Manager シークレットを作成する
 
 Trident はストレージを管理するために FSx vserver に対して API を発行するため、そのためには資格情報が必要になります。これらの認証情報を渡す安全な方法は、AWS Secrets Manager シークレットを使用することです。したがって、まだお持ちでない場合は、vsadmin アカウントの認証情報を含む AWS Secrets Manager シークレットを作成する必要があります。
@@ -32,6 +33,7 @@ aws secretsmanager create-secret --name trident-secret --description "Trident CS
 ----
 
 
+[[create-iam-policy]]
 == IAM ポリシーを作成する
 
 Tridentを正しく実行するには、AWS権限も必要です。したがって、Tridentに必要な権限を付与するポリシーを作成する必要があります。
@@ -75,6 +77,7 @@ aws iam create-policy --policy-name AmazonFSxNCSIDriverPolicy --policy-document 
 ----
 
 
+[[create-pod-identity-or-iam-role-for-service-account-association-irsa]]
 === Pod Identity またはサービス アカウントの関連付け（IRSA）用の IAM ロールを作成する
 
 EKS Pod Identity を持つ AWS Identity and Access Management （IAM） ロール、またはサービスアカウントの関連付け （IRSA） の IAM ロールを引き受けるように Kubernetes サービスアカウントを設定できます。サービスアカウントを使用するように設定されたすべてのポッドは、ロールがアクセス権限を持つすべての AWS サービスにアクセスできるようになります。

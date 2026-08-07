@@ -16,6 +16,7 @@ link:trident-cl.html["tridentctl コマンドとオプション"]は Trident RES
 
 
 
+[[when-to-use-the-rest-api]]
 == REST APIを使用する場合
 
 REST API は、Kubernetes 以外のデプロイメントで Trident をスタンドアロンバイナリとして使用する高度なインストールに便利です。
@@ -24,6 +25,7 @@ REST API は、Kubernetes 以外のデプロイメントで Trident をスタン
 
 
 
+[[using-rest-api]]
 == REST APIの使用
 
 これらの API の呼び出し例については、デバッグ(`-d`フラグを渡してください。詳細については、link:../trident-managing-k8s/tridentctl.html["tridentctlを使用してTridentを管理する"]を参照してください。
@@ -32,6 +34,7 @@ API は次のように動作します：
 
 
 
+[[get]]
 === GET
 
 `GET <trident-address>/trident/v1/<object-type>`:: そのタイプのすべてのオブジェクトを一覧表示します。
@@ -40,6 +43,7 @@ API は次のように動作します：
 
 
 
+[[post]]
 === POST
 
 `POST <trident-address>/trident/v1/<object-type>`:: 指定したタイプのオブジェクトを作成します。
@@ -54,6 +58,7 @@ API は次のように動作します：
 
 
 
+[[delete]]
 === DELETE
 
 `DELETE <trident-address>/trident/v1/<object-type>/<object-name>`:: 名前付きリソースを削除します。

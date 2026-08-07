@@ -16,6 +16,7 @@ Google Cloud NetApp Volumes バックエンドを設定する前に、次の要�
 
 
 
+[[prerequisites-for-nfs-volumes]]
 == NFSボリュームの前提条件
 
 Google Cloud NetApp Volumes を初めて使用する場合、または新しい場所で使用する場合は、Google Cloud NetApp Volumes をセットアップして NFS ボリュームを作成するために初期設定が必要です。link:https://cloud.google.com/netapp/volumes/docs/before-you-begin/application-resilience["開始する前に"^]を参照してください。

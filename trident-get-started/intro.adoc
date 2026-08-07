@@ -16,6 +16,7 @@ Tridentは、NetAppが管理する完全にサポートされたオープンソ�
 
 
 
+[[what-is-trident]]
 == Tridentとは
 
 NetApp Trident は、パブリック クラウドまたはオンプレミスにあるすべての一般的な NetApp ストレージ プラットフォーム（オンプレミス ONTAP クラスタ（AFF、FAS、ASA）、ONTAP Select、Cloud Volumes ONTAP、Element ソフトウェア（NetApp HCI、SolidFire）、Azure NetApp Files、Amazon FSx for NetApp ONTAP を含む）全体でストレージ リソースの消費と管理を可能にします。
@@ -29,6 +30,7 @@ NOTE: Kubernetesを初めて使用する場合は、link:https://kubernetes.io/d
 
 
 
+[[kubernetes-integration-with-netapp-products]]
 == Kubernetes と NetApp 製品の統合
 
 NetApp のストレージ製品ポートフォリオは、Kubernetes クラスタのさまざまな側面と統合され、高度なデータ管理機能を提供することで、Kubernetes デプロイメントの機能性、能力、パフォーマンス、可用性を強化します。

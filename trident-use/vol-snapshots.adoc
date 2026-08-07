@@ -16,6 +16,7 @@ Kubernetes の Persistent Volume （ PV ）のボリュームスナップショ�
 
 
 
+[[overview]]
 == 概要
 
 ボリュームスナップショットは `ontap-nas`、 `ontap-nas-flexgroup`、 `ontap-san`、 `ontap-san-economy`、 `solidfire-san`、 `azure-netapp-files`、および `google-cloud-netapp-volumes`ドライバでサポートされています。
@@ -30,6 +31,7 @@ NOTE: GKE環境でオンデマンドボリュームスナップショットを�
 
 
 
+[[create-a-volume-snapshot]]
 == ボリューム Snapshot を作成する
 
 .手順
@@ -114,6 +116,7 @@ Status:
 
 
 
+[[create-a-pvc-from-a-volume-snapshot]]
 == ボリュームSnapshotからPVCを作成する
 
  `dataSource`を使用して、VolumeSnapshotという名前の `<pvc-name>`をデータのソースとして使用するPVCを作成できます。PVCが作成されると、ポッドに接続して他のPVCと同じように使用できるようになります。
@@ -147,6 +150,7 @@ spec:
 ----
 
 
+[[import-a-volume-snapshot]]
 == ボリューム Snapshot をインポートする
 
 Tridentはlink:https://kubernetes.io/docs/concepts/storage/volume-snapshots/#static["Kubernetesの事前プロビジョニングされたスナップショットプロセス"^]をサポートしており、クラスタ管理者が `VolumeSnapshotContent`オブジェクトを作成し、Trident外部で作成されたスナップショットをインポートできるようにします。
@@ -238,6 +242,7 @@ spec:
 
 
 
+[[recover-volume-data-using-snapshots]]
 == スナップショットを使用してボリュームデータを回復する
 
  `ontap-nas`および `ontap-nas-economy`ドライバーを使用してプロビジョニングされたボリュームの互換性を最大限に高めるために、スナップショットディレクトリはデフォルトでは非表示になっています。 `.snapshot`ディレクトリを有効にして、スナップショットから直接データをリカバリします。
@@ -253,6 +258,7 @@ NOTE: Snapshotコピーをリストアすると、既存のボリューム構成
 
 
 
+[[in-place-volume-restoration-from-a-snapshot]]
 == Snapshotからのインプレースボリュームリストア
 
 Tridentは、 `TridentActionSnapshotRestore`（TASR）CRを使用して、スナップショットから迅速なインプレースボリュームリストアを提供します。このCRは命令型のKubernetesアクションとして機能し、操作の完了後は保持されません。
@@ -352,12 +358,14 @@ metadata:
 ====
 
 
+[[delete-a-pv-with-associated-snapshots]]
 == 関連するスナップショットを含む PV を削除する
 
 関連するスナップショットを持つ永続ボリュームを削除すると、対応するTridentボリュームは「削除中」状態に更新されます。Tridentボリュームを削除するには、ボリュームスナップショットを削除します。
 
 
 
+[[deploy-a-volume-snapshot-controller]]
 == ボリュームSnapshotコントローラを導入する
 
 KubernetesディストリビューションにスナップショットコントローラとCRDが含まれていない場合は、次のようにデプロイできます。
@@ -397,6 +405,7 @@ NOTE: 必要に応じて `deploy/kubernetes/snapshot-controller/rbac-snapshot-co
 
 
 
+[[related-links]]
 == 関連リンク
 
 * link:../trident-concepts/snapshots.html["ボリュームスナップショット"]

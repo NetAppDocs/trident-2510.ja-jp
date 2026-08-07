@@ -24,6 +24,7 @@ Kubernetesクラスターを廃止する場合は、アンインストールす�
 
 
 
+[[determine-the-original-installation-method]]
 == 元のインストール方法を決定する
 
 Tridentのインストールに使用したのと同じ方法でアンインストールする必要があります。アンインストールする前に、最初にTridentのインストールに使用したバージョンを確認してください。
@@ -44,12 +45,14 @@ Tridentのインストールに使用したのと同じ方法でアンインス�
 
 
 
+[[uninstall-a-trident-operator-installation]]
 == Tridentオペレータのインストールをアンインストールする
 
 Trident Operator のインストールは手動でアンインストールすることも、Helm を使用してアンインストールすることもできます。
 
 
 
+[[uninstall-manual-installation]]
 === 手動インストールをアンインストールする
 
 Tridentをオペレータを使用してインストールした場合は、次のいずれかを実行してアンインストールできます：
@@ -73,6 +76,7 @@ kubectl delete -f deploy/<bundle.yaml> -n <namespace>
 
 
 
+[[uninstall-helm-installation]]
 === Helmのインストールをアンインストールする
 
 Helmを使用してTridentをインストールした場合は、 `helm uninstall`を使用してアンインストールできます。
@@ -90,6 +94,7 @@ release "trident" uninstalled
 ----
 
 
+[[uninstall-a-tridentctl-installation]]
 ==  `tridentctl`インストールをアンインストールします
 
 Tridentに関連するCRDおよび関連オブジェクトを除くすべてのリソースを削除するには、 `uninstall`コマンドを `tridentctl`で使用してください：

@@ -16,6 +16,7 @@ Tridentは、Tridentオーケストレーター用のいくつかのコマンド
 
 
 
+[[logging]]
 == ロギング
 
 `-debug`:: デバッグ出力を有効にします。
@@ -24,6 +25,7 @@ Tridentは、Tridentオーケストレーター用のいくつかのコマンド
 
 
 
+[[kubernetes]]
 == Kubernetes
 
 `-k8s_pod`:: このオプションまたは `-k8s_api_server`を使用して、Kubernetesサポートを有効にします。これを設定すると、Tridentは、含まれているポッドのKubernetesサービスアカウントのクレデンシャルを使用してAPIサーバに接続します。これは、Tridentがサービスアカウントが有効になっているKubernetesクラスタ内のポッドとして実行されている場合にのみ機能します。
@@ -32,6 +34,7 @@ Tridentは、Tridentオーケストレーター用のいくつかのコマンド
 
 
 
+[[docker]]
 == Docker
 
 `-volume_driver <name>`:: Docker プラグインを登録するときに使用するドライバー名。デフォルトは `netapp`。
@@ -41,6 +44,7 @@ Tridentは、Tridentオーケストレーター用のいくつかのコマンド
 
 
 
+[[rest]]
 == REST
 
 `-address <ip-or-host>`:: Trident の REST サーバーがリッスンするアドレスを指定します。デフォルトは localhost です。localhost でリッスンし、Kubernetes ポッド内で実行している場合、ポッドの外部から REST インターフェイスに直接アクセスすることはできません。 `-address ""`を使用して、ポッド IP アドレスから REST インターフェイスにアクセスできるようにします。

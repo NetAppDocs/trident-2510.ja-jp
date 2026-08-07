@@ -16,6 +16,7 @@ summary: Tridentへの簡単なアクセスを提供するコマンドライン�
 
 
 
+[[commands-and-global-flags]]
 == コマンドとグローバルフラグ
 
  `tridentctl help`を実行すると、 `tridentctl`で使用可能なコマンドのリストを取得できます。または、任意のコマンドに `--help`フラグを追加すると、その特定のコマンドのオプションとフラグのリストを取得できます。
@@ -70,10 +71,12 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 ====
 
 
+[[command-options-and-flags]]
 == コマンドオプションとフラグ
 
 
 
+[[create]]
 === 作成する
 
  `create`コマンドを使用して、Tridentにリソースを追加します。
@@ -85,6 +88,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[delete]]
 === 削除
 
  `delete`コマンドを使用して、Tridentから1つ以上のリソースを削除します。
@@ -99,6 +103,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[get]]
 === 取得
 
  `get`コマンドを使用して、Tridentから1つ以上のリソースを取得します。
@@ -116,6 +121,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[images]]
 === 画像
 
  `images`フラグを使用して、Tridentに必要なコンテナイメージのテーブルを出力します。
@@ -128,6 +134,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[import-volume]]
 === ボリュームのインポート
 
  `import volume`コマンドを使用して、既存のボリュームをTridentにインポートします。
@@ -142,6 +149,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[install]]
 === インストール
 
  `install`フラグを使用してTridentをインストールします。
@@ -171,6 +179,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[logs]]
 === ログ
 
  `logs`フラグを使用して、Tridentからログを出力します。
@@ -187,6 +196,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[send]]
 === 送信
 
  `send`コマンドを使用して、Tridentからリソースを送信します。
@@ -198,6 +208,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[uninstall]]
 === uninstall
 
  `uninstall`フラグを使用してTridentをアンインストールします。
@@ -210,6 +221,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[update]]
 === 更新
 
  `update`コマンドを使用して、Tridentのリソースを変更します。
@@ -221,6 +233,7 @@ WARNING: Trident REST インターフェイスは、127.0.0.1（IPv4 の場合�
 
 
 
+[[update-backend-state]]
 === バックエンドの状態を更新する
 
  `update backend state`コマンドを使用して、バックエンド操作を一時停止または再開します。
@@ -297,6 +310,7 @@ spec:
 ====
 
 
+[[version]]
 === version
 
  `version`フラグを使用して、 `tridentctl`のバージョンと実行中のTridentサービスを出力します。
@@ -309,6 +323,7 @@ spec:
 
 
 
+[[plugin-support]]
 == プラグインのサポート
 
 Tridentctl は kubectl と同様のプラグインをサポートしています。Tridentctl は、プラグインのバイナリファイル名が「tridentctl-<plugin>」というスキームに従い、バイナリが PATH 環境変数にリストされているフォルダーに配置されている場合、プラグインを検出します。検出されたすべてのプラグインは、tridentctl ヘルプのプラグインセクションにリストされます。オプションとして、環境変数 TRIDENTCTL_PLUGIN_PATH でプラグインフォルダーを指定して検索を制限することもできます（例： `TRIDENTCTL_PLUGIN_PATH=~/tridentctl-plugins/`）。変数を使用すると、tridenctl は指定されたフォルダー内でのみ検索します。

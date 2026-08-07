@@ -16,6 +16,7 @@ summary: 複数のストレージ構成を同時に利用したい場合は、�
 
 
 
+[[steps-for-docker-managed-plugin-version-1-1317-03-or-later]]
 == Docker マネージドプラグインの手順（バージョン 1.13/17.03 以降）
 
 . エイリアスと設定ファイルを指定して最初のインスタンスを起動します。
@@ -51,6 +52,7 @@ docker volume create -d silver --name ntapSilver
 
 
 
+[[steps-for-traditional-version-1-12-or-earlier]]
 == 従来の手順（バージョン1.12以前）
 
 . カスタム ドライバー ID を使用して NFS 構成でプラグインを起動します：

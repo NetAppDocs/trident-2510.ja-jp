@@ -16,6 +16,7 @@ Docker で Trident を使用する際の既知の問題と制限に関する情�
 
 
 
+[[upgrading-trident-docker-volume-plugin-to-20-10-and-later-from-older-versions-results-in-upgrade-failure-with-the-no-such-file-or-directory-error]]
 == Trident Docker Volume Plugin を古いバージョンから 20.10 以降にアップグレードすると、「そのようなファイルまたはディレクトリはありません」というエラーが発生し、アップグレードが失敗します。
 
 .回避策
@@ -41,6 +42,7 @@ docker plugin install netapp/trident-plugin:20.10 --alias netapp --grant-all-per
 
 
 
+[[volume-names-must-be-a-minimum-of-2-characters-in-length]]
 == ボリューム名は 2 文字以上である必要があります。
 
 
@@ -48,6 +50,7 @@ NOTE: これは Docker クライアントの制限です。クライアントは
 
 
 
+[[docker-swarm-has-certain-behaviors-that-prevent-trident-from-supporting-it-with-every-storage-and-driver-combination]]
 == Docker Swarmには、Tridentがあらゆるストレージとドライバの組み合わせでサポートすることを妨げる特定の動作があります。
 
 * Docker Swarm は現在、一意のボリューム識別子としてボリューム ID ではなくボリューム名を使用しています。
@@ -61,4 +64,5 @@ NetAppはDockerチームにフィードバックを提供しましたが、今�
 
 
 
+[[if-a-flexgroup-is-being-provisioned-ontap-does-not-provision-a-second-flexgroup-if-the-second-flexgroup-has-one-or-more-aggregates-in-common-with-the-flexgroup-being-provisioned]]
 == FlexGroupがプロビジョニングされている場合、2番目のFlexGroupがプロビジョニングされているFlexGroupと1つ以上のアグリゲートを共有している場合、ONTAPは2番目のFlexGroupをプロビジョニングしません。

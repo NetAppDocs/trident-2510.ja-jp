@@ -16,6 +16,7 @@ summary: PersistentVolume（PV）とPersistentVolumeClaim（PVC）を作成し�
 
 
 
+[[overview]]
 == 概要
 
 A https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^]（PVC）は、クラスタ上のPersistentVolumeへのアクセス要求です。
@@ -26,6 +27,7 @@ PVC を作成したら、ボリュームをポッドにマウントできます�
 
 
 
+[[create-the-pvc]]
 == PVC を作成する
 
 .手順
@@ -74,6 +76,7 @@ kubectl delete pod pv-pod
 
 
 
+[[sample-manifests]]
 === サンプルマニフェスト
 
 .PersistentVolumeClaim サンプルマニフェスト

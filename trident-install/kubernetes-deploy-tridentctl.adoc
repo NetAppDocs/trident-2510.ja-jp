@@ -16,6 +16,7 @@ Tridentは `tridentctl`を使用してインストールできます。このプ
 
 
 
+[[critical-information-about-trident10]]
 == Trident10に関する重要な情報
 
 *Trident に関する以下の重要な情報を必ずお読みください。*
@@ -33,6 +34,7 @@ Tridentは `tridentctl`を使用してインストールできます。このプ
 ====
 
 
+[[install-trident-using-tridentctl]]
 == Tridentを使用してインストール `tridentctl`
 
 link:../trident-install/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
@@ -69,6 +71,7 @@ kubectl run -i --tty ping --image=busybox --restart=Never --rm -- \
 ====
 
 
+[[step-1-download-the-trident-installer-package]]
 == ステップ1：Tridentインストーラーパッケージをダウンロードする
 
 Tridentインストーラーパッケージは、Tridentポッドを作成し、その状態を維持するために使用されるCRDオブジェクトを構成し、CSIサイドカーを初期化して、ボリュームのプロビジョニングやクラスターホストへの接続などのアクションを実行します。最新バージョンのTridentインストーラーをlink:https://github.com/NetApp/trident/releases/latest["GitHub の _Assets_ セクション"^]からダウンロードして解凍します。例の_<trident-installer-XX.XX.X.tar.gz>_を選択したTridentバージョンで更新します。
@@ -81,6 +84,7 @@ cd trident-installer
 ----
 
 
+[[step-2-install-trident]]
 == ステップ2：Tridentをインストールする
 
 目的のネームスペースに Trident をインストールするには、 `tridentctl install`コマンドを実行します。追加の引数を追加して、イメージレジストリの場所を指定できます。
@@ -132,12 +136,14 @@ INFO Trident installation succeeded.
 ----
 
 
+[[verify-the-installation]]
 == インストールの確認
 
 ポッド作成ステータスを使用してインストールを確認するか、 `tridentctl`を使用できます。
 
 
 
+[[using-pod-creation-status]]
 === ポッド作成ステータスの使用
 
 作成されたポッドのステータスを確認することで、Tridentのインストールが完了したかどうかを確認できます：
@@ -155,6 +161,7 @@ NOTE: インストーラが正常に完了しない場合、または `trident-c
 
 
 
+[[using-tridentctl]]
 === 使用 `tridentctl`
 
  `tridentctl`を使用して、インストールされているTridentのバージョンを確認できます。
@@ -171,6 +178,7 @@ NOTE: インストーラが正常に完了しない場合、または `trident-c
 ----
 
 
+[[sample-configurations]]
 == サンプル構成
 
 以下の例は、 `tridentctl`を使用してTridentをインストールするためのサンプル構成を示しています。

@@ -18,6 +18,7 @@ summary: 各ストレージドライバには異なるオプションセット�
 
 
 
+[[ontap-volume-options]]
 == ONTAPボリュームオプション
 
 NFS、iSCSI、FC のボリューム作成オプションは次のとおりです：
@@ -105,6 +106,7 @@ NAEがバックエンドで有効になっている場合、Tridentでプロビ�
 |===
 
 
+[[examples]]
 === 例
 
 以下の例を参照してください：
@@ -161,6 +163,7 @@ docker volume create -d netapp --name my_vol --opt snapshotPolicy=myPolicy
 
 
 
+[[element-software-volume-options]]
 == Element ソフトウェアのボリュームオプション
 
 Element ソフトウェアオプションは、ボリュームに関連付けられたサイズとサービス品質（QoS）ポリシーを公開します。ボリュームが作成されると、それに関連付けられた QoS ポリシーは  `-o type=service_level` の命名法を使用して指定されます。
@@ -185,6 +188,7 @@ Element ドライバーを使用して QoS サービスレベルを定義する�
 |===
 
 
+[[example]]
 === 例
 
 QoS 定義を含む次のサンプル構成ファイルを参照してください：

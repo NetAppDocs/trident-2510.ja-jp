@@ -19,6 +19,7 @@ NOTE: Tridentのヘルプについては、 `tridentctl logs -a -n trident`を�
 
 
 
+[[general-troubleshooting]]
 == 一般的なトラブルシューティング
 
 * Tridentポッドが正常に起動しない場合（例えば、Tridentポッドが `ContainerCreating`フェーズで準備完了コンテナが2つ未満の状態で停止している場合）、 `kubectl -n trident describe deployment trident`および `kubectl -n trident describe pod trident-********-****`を実行すると、追加の情報が得られます。kubeletログの取得（例： `journalctl -xeu kubelet`経由）も役立ちます。
@@ -71,6 +72,7 @@ tridentctlでインストール::
 
 
 
+[[unsuccessful-trident-deployment-using-the-operator]]
 == オペレータを使用したTrident展開の失敗
 
 オペレータを使用してTridentを導入する場合、 `TridentOrchestrator`のステータスが `Installing`から `Installed`に変わります。 `Failed`ステータスが表示され、オペレータが自力で回復できない場合は、次のコマンドを実行してオペレータのログを確認する必要があります：
@@ -138,6 +140,7 @@ trident-operator-766f7b8658-ldzsv   1/1     Running            0          8m17s
 
 
 
+[[unsuccessful-trident-deployment-using-tridentctl]]
 == Tridentの導入に失敗しました `tridentctl`
 
 何が問題だったのかを解明するために、``-d``引数を使用してインストーラーを再度実行できます。これによりデバッグモードがオンになり、問題の内容を理解するのに役立ちます：
@@ -160,6 +163,7 @@ INFO Trident uninstallation succeeded.
 ----
 
 
+[[completely-remove-trident-and-crds]]
 == Tridentおよび CRD を完全に削除
 
 Trident と作成されたすべての CRD および関連するカスタムリソースを完全に削除できます。
@@ -199,12 +203,14 @@ tridentctl obliviate crd
 ====
 
 
+[[nvme-node-unstaging-failure-with-rwx-raw-block-namespaces-o-kubernetes-1-26]]
 == Kubernetes 1.26 の RWX raw ブロック名前空間での NVMe ノードのアンステージング失敗
 
 Kubernetes 1.26 を実行している場合、RWX 生のブロック名前空間で NVMe/TCP を使用すると、ノードのステージング解除が失敗する可能性があります。次のシナリオは、失敗に対する回避策を提供します。あるいは、Kubernetes を 1.27 にアップグレードすることもできます。
 
 
 
+[[deleted-the-namespace-and-pod]]
 === ネームスペースとポッドを削除しました
 
 Trident で管理されている名前空間（NVMe 永続ボリューム）がポッドに接続されているシナリオを考えてみます。ONTAP バックエンドから直接名前空間を削除すると、ポッドを削除しようとした後、ステージング解除プロセスが停止します。このシナリオは、Kubernetes クラスタやその他の機能には影響しません。
@@ -214,6 +220,7 @@ Trident で管理されている名前空間（NVMe 永続ボリューム）が�
 
 
 
+[[blocked-datalifs]]
 === ブロックされたデータLIF
 
  If you block (or bring down) all the dataLIFs of the NVMe Trident backend, the unstaging process gets stuck when you attempt to delete the pod. In this scenario, you cannot run any NVMe CLI commands on the Kubernetes node.
@@ -222,6 +229,7 @@ Trident で管理されている名前空間（NVMe 永続ボリューム）が�
 
 
 
+[[deleted-namespace-mapping]]
 === 名前空間マッピングを削除しました
 
  If you remove the `hostNQN` of the worker node from the corresponding subsystem, the unstaging process gets stuck when you attempt to delete the pod. In this scenario, you cannot run any NVMe CLI commands on the Kubernetes node.
@@ -230,6 +238,7 @@ Trident で管理されている名前空間（NVMe 永続ボリューム）が�
 
 
 
+[[nfsv4-2-clients-report-invalid-argument-after-upgrading-ontap-when-when-expecting-v4-2-xattrs-being-enabled]]
 == NFSv4.2クライアントは、「v4.2-xattrs」が有効になっていることを期待している場合、ONTAPのアップグレード後に「invalid argument」を報告します
 
 ONTAP のアップグレード後、NFSv4.2 クライアントが NFSv4.2 エクスポートをマウントしようとすると「無効な引数」エラーを報告する場合があります。この問題は、SVM で `v4.2-xattrs`オプションが有効になっていない場合に発生します。.回避策：SVM で `v4.2-xattrs`オプションを有効にするか、ONTAP 9.12.1 以降にアップグレードしてください。このバージョンでは、このオプションがデフォルトで有効になっています。

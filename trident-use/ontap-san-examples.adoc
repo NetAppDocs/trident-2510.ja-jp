@@ -23,6 +23,7 @@ Trident バックエンド構成では、システムが ASA r2 であること�
 
 
 
+[[backend-configuration-options]]
 == バックエンド構成オプション
 
 バックエンド構成オプションについては、次の表を参照してください：
@@ -158,6 +159,7 @@ NOTE: NVMeはONTAP REST APIでのみサポートされ、ONTAPI（ZAPI）では�
 |===
 
 
+[[recommendations-for-using-formatoptions]]
 === formatOptionsの使用に関する推奨事項
 
 Tridentは、フォーマット処理を高速化するために次のオプションを推奨します：
@@ -168,6 +170,7 @@ Tridentは、フォーマット処理を高速化するために次のオプシ�
 
 
 
+[[authenticate-trident-to-a-backend-svm-using-active-directory-credentials]]
 === Active Directory の認証情報を使用してバックエンド SVM に Trident を認証
 
 Tridentを設定して、Active Directory（AD）認証情報を使用してバックエンドSVMに認証できます。ADアカウントがSVMにアクセスする前に、クラスターまたはSVMへのADドメイン コントローラアクセスを設定する必要があります。ADアカウントを使用してクラスターを管理するには、ドメイン トンネルを作成する必要があります。詳細については、link:https://docs.netapp.com/us-en/ontap/authentication/enable-ad-users-groups-access-cluster-svm-task.html["ONTAPでActive Directoryドメイン コントローラ アクセスを設定する"^]を参照してください。
@@ -190,6 +193,7 @@ Tridentを設定して、Active Directory（AD）認証情報を使用してバ�
 
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == ボリュームのプロビジョニング用のバックエンド設定オプション
 
 デフォルトのプロビジョニングは、設定の `defaults`セクションにあるこれらのオプションを使用して制御できます。例については、以下の設定例を参照してください。
@@ -233,6 +237,7 @@ Tridentを設定して、Active Directory（AD）認証情報を使用してバ�
 |===
 
 
+[[volume-provisioning-examples]]
 === ボリュームプロビジョニングの例
 
 デフォルトを定義した例を次に示します：
@@ -278,6 +283,7 @@ image::../media/vol-show-san.png[volume show コマンドの出力を表示し�
 
 
 
+[[minimal-configuration-examples]]
 == 最小限の構成例
 
 次の例は、ほとんどのパラメータをデフォルトのままにする基本構成を示しています。これはバックエンドを定義する最も簡単な方法です。
@@ -478,6 +484,7 @@ defaults:
 ====
 
 
+[[examples-of-backends-with-virtual-pools]]
 == 仮想プールを使用したバックエンドの例
 
 これらのサンプルバックエンド定義ファイルでは、すべてのストレージプールに対して特定のデフォルトが設定されています。たとえば、 `spaceReserve`はnone、 `spaceAllocation`はfalse、 `encryption`はfalseです。仮想プールはストレージ セクションで定義されます。
@@ -622,6 +629,7 @@ storage:
 ====
 
 
+[[map-backends-to-storageclasses]]
 == バックエンドをStorageClassesにマッピングする
 
 次のStorageClass定義は<<仮想プールを使用したバックエンドの例>>を参照しています。 `parameters.selector`フィールドを使用して、各StorageClassはボリュームをホストするために使用できる仮想プールを呼び出します。ボリュームには、選択した仮想プールで定義された側面が設定されます。

@@ -18,6 +18,7 @@ summary: まず、運用環境、アプリケーション クラスタ、アプ�
 
 
 
+[[trident-protect-kubernetes-cluster-compatibility]]
 == Trident Protect Kubernetes クラスタの互換性
 
 Trident Protect は、以下を含む幅広いフルマネージドおよびセルフマネージド Kubernetes サービスと互換性があります：
@@ -42,6 +43,7 @@ Trident Protect は、以下を含む幅広いフルマネージドおよびセ�
 ====
 
 
+[[trident-protect-storage-backend-compatibility]]
 == Trident Protect ストレージバックエンドの互換性
 
 Trident Protect は次のストレージ バックエンドをサポートしています：
@@ -65,6 +67,7 @@ Trident Protect は次のストレージ バックエンドをサポートして
 
 
 
+[[requirements-for-nas-economy-volumes]]
 == nas-economyボリュームの要件
 
 Trident Protect は、nas-economy ボリュームへのバックアップおよびリストア処理をサポートします。スナップショット、クローン、および SnapMirror レプリケーションの nas-economy ボリュームへの実行は、現在サポートされていません。Trident Protect で使用する予定の各 nas-economy ボリュームについて、スナップショット ディレクトリを有効にする必要があります。
@@ -89,6 +92,7 @@ NOTE: 新しいボリュームのスナップショットディレクトリを�
 
 
 
+[[protecting-data-with-kubevirt-vms]]
 == KubeVirt VM でデータを保護
 
 Trident Protectは、データ保護操作中にKubeVirt仮想マシンのファイルシステムのフリーズとアンフリーズ機能を提供し、データの整合性を確保します。VMフリーズ操作の設定方法とデフォルトの動作はTrident Protectのバージョンによって異なり、新しいリリースではHelmチャートパラメータを通じて簡素化された設定が提供されます。
@@ -130,6 +134,7 @@ kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=
 ====
 
 
+[[requirements-for-snapmirror-replication]]
 == SnapMirror レプリケーションの要件
 
 NetApp SnapMirrorレプリケーションは、以下のONTAPソリューションでTrident Protectと併用できます：
@@ -142,6 +147,7 @@ NetApp SnapMirrorレプリケーションは、以下のONTAPソリューショ�
 
 
 
+[[ontap-cluster-requirements-for-snapmirror-replication]]
 === SnapMirror レプリケーションのための ONTAP クラスタ要件
 
 SnapMirror レプリケーションを使用する場合は、ONTAP クラスタが次の要件を満たしていることを確認してください：
@@ -166,6 +172,7 @@ NOTE: SnapMirror非同期保護のみがサポートされています。
 
 
 
+[[peering-considerations-for-snapmirror-replication]]
 === SnapMirror レプリケーションのピアリングに関する考慮事項
 
 ストレージ バックエンド ピアリングを使用する予定の場合は、環境が次の要件を満たしていることを確認してください：
@@ -181,12 +188,14 @@ NOTE: 2つのONTAPクラスタ間のレプリケーション関係で使用さ�
 
 
 
+[[trident-ontap-configuration-for-snapmirror-replication]]
 === SnapMirror レプリケーション用の Trident / ONTAP 設定
 
 Trident Protect では、ソース クラスタとデスティネーション クラスタの両方のレプリケーションをサポートするストレージ バックエンドを少なくとも 1 つ設定する必要があります。ソース クラスタとデスティネーション クラスタが同じ場合、復元力を最大限に高めるには、デスティネーション アプリケーションでソース アプリケーションとは異なるストレージ バックエンドを使用する必要があります。
 
 
 
+[[kubernetes-cluster-requirements-for-snapmirror-replication]]
 === SnapMirror レプリケーションの Kubernetes クラスタの要件
 
 Kubernetes クラスタが次の要件を満たしていることを確認します。

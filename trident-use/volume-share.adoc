@@ -16,6 +16,7 @@ Tridentを使用すると、プライマリ名前空間にボリュームを作�
 
 
 
+[[features]]
 == 機能
 
 TridentVolumeReference CR を使用すると、ReadWriteMany（RWX）NFS ボリュームを 1 つ以上の Kubernetes 名前空間にわたって安全に共有できます。この Kubernetes ネイティブソリューションには、次の利点があります：
@@ -31,6 +32,7 @@ image::cross-namespace-sharing.png[ネームスペース間共有の概念図。
 
 
 
+[[quick-start]]
 == クイック スタート
 
 わずか数ステップで NFS ボリューム共有を設定できます。
@@ -53,6 +55,7 @@ image::cross-namespace-sharing.png[ネームスペース間共有の概念図。
 
 
 
+[[configure-the-source-and-destination-namespaces]]
 == ソースネームスペースと宛先ネームスペースを設定する
 
 セキュリティを確保するには、名前空間間の共有には、ソース名前空間の所有者、クラスター管理者、および宛先名前空間の所有者による連携とアクションが必要です。各ステップでユーザーロールが指定されます。
@@ -133,12 +136,14 @@ Tridentは、デスティネーションPVCの `shareFromPVC`アノテーショ�
 
 
 
+[[delete-a-shared-volume]]
 == 共有ボリュームを削除する
 
 複数の名前空間間で共有されているボリュームを削除できます。Tridentは、ソース名前空間のボリュームへのアクセスを削除し、ボリュームを共有する他の名前空間へのアクセスを維持します。ボリュームを参照するすべての名前空間が削除されると、Tridentはボリュームを削除します。
 
 
 
+[[use-tridentctl-get-to-query-subordinate-volumes]]
 ==  `tridentctl get`を使用して従属ボリュームを照会する
 
 [`tridentctl`ユーティリティを使用して、 `get`コマンドを実行すると、従属ボリュームを取得できます。詳細については、link：../trident-reference/trident-cl.html[`tridentctl`コマンドとオプション]を参照してください。
@@ -157,6 +162,7 @@ Usage:
 
 
 
+[[limitations]]
 == 制限事項
 
 * Tridentは、宛先ネームスペースが共有ボリュームに書き込むのを防ぐことはできません。共有ボリュームのデータが上書きされないようにするには、ファイルロックまたはその他のプロセスを使用する必要があります。
@@ -166,6 +172,7 @@ Usage:
 
 
 
+[[for-more-information]]
 == 詳細情報
 
 クロスネームスペースボリュームアクセスの詳細については、次を参照してください：

@@ -16,6 +16,7 @@ Tridentを導入する前に、ホストに必要なプロトコルの前提条�
 
 
 
+[[verify-the-requirements]]
 == 要件を確認する
 
 * 導入がすべてのlink:../trident-get-started/requirements.html["要件"]を満たしていることを確認します。
@@ -30,6 +31,7 @@ docker --version
 
 
 
+[[nfs-tools]]
 === NFSツール
 
 オペレーティングシステムのコマンドを使用して NFS ツールをインストールします。
@@ -56,6 +58,7 @@ WARNING: ボリュームをコンテナに接続するときに障害が発生�
 
 
 
+[[iscsi-tools]]
 === iSCSIツール
 
 オペレーティングシステムのコマンドを使用してiSCSIツールをインストールします。
@@ -158,6 +161,7 @@ sudo systemctl status open-iscsi
 ====
 
 
+[[nvme-tools]]
 == NVMeツール
 
 オペレーティングシステムのコマンドを使用してNVMeツールをインストールします。
@@ -192,6 +196,7 @@ sudo modprobe nvme-tcp
 ====
 
 
+[[fc-tools]]
 == FCツール
 
 オペレーティングシステムのコマンドを使用してFCツールをインストールします。

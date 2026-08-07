@@ -16,6 +16,7 @@ Trident オペレータを使用すると、 `TridentOrchestrator` spec の属�
 
 
 
+[[understanding-controller-pods-and-node-pods]]
 == コントローラポッドとノードポッドについて
 
 Tridentは、クラスター内の各ワーカー ノード上で単一のコントローラー ポッドとノード ポッドとして実行されます。ノード ポッドは、Tridentボリュームをマウントする可能性のあるホスト上で実行されている必要があります。
@@ -28,6 +29,7 @@ Kuberneteslink:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-po
 
 
 
+[[configuration-options]]
 == 構成オプション
 
 
@@ -263,6 +265,7 @@ NOTE: ポッドパラメータのフォーマットの詳細については、li
 
 
 
+[[sample-configurations]]
 == サンプル構成
 
 <<構成オプション>>の属性を使用して `TridentOrchestrator`を定義し、インストールをカスタマイズできます。

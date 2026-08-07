@@ -23,6 +23,7 @@ NFS 暗号化を使用するボリュームを作成、削除、サイズ変更�
 
 
 
+[[configure-in-flight-kerberos-encryption-with-on-premise-ontap-volumes]]
 == オンプレミス ONTAP ボリュームでインフライト Kerberos 暗号化を設定する
 
 管理対象クラスタとオンプレミス ONTAP ストレージバックエンド間のストレージトラフィックで Kerberos 暗号化を有効にすることができます。
@@ -40,6 +41,7 @@ NOTE: オンプレミス ONTAP ストレージバックエンドを使用した 
 
 
 
+[[add-or-modify-ontap-export-policies]]
 === ONTAP エクスポートポリシーの追加または変更
 
 ONTAP ストレージ VM ルートボリュームおよびアップストリーム Kubernetes クラスタと共有される ONTAP ボリュームに対して、Kerberos 暗号化をサポートする既存の ONTAP エクスポートポリシーにルールを追加するか、新しいエクスポートポリシーを作成する必要があります。追加するエクスポートポリシールール、または作成する新しいエクスポートポリシーは、次のアクセスプロトコルとアクセス権限をサポートする必要があります（
@@ -77,6 +79,7 @@ ONTAP エクスポートポリシーとエクスポートポリシールール�
 
 
 
+[[create-a-storage-backend]]
 === ストレージバックエンドを作成する
 
 Kerberos 暗号化機能を含む Trident ストレージバックエンド構成を作成できます。
@@ -144,6 +147,7 @@ tridentctl logs
 
 
 
+[[create-a-storage-class]]
 === ストレージクラスを作成する
 
 Kerberos 暗号化を使用してボリュームをプロビジョニングするためのストレージクラスを作成できます。
@@ -202,12 +206,14 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 
 
 
+[[provision-volumes]]
 === ボリュームのプロビジョニング
 
 ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになります。手順については、 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームをプロビジョニングする"^]を参照してください。
 
 
 
+[[configure-in-flight-kerberos-encryption-with-azure-netapp-files-volumes]]
 == Azure NetApp Files ボリュームでインフライト Kerberos 暗号化を設定する
 
 マネージドクラスタと単一のAzure NetApp Filesストレージバックエンド、またはAzure NetApp Filesストレージバックエンドの仮想プール間のストレージトラフィックでKerberos暗号化を有効にすることができます。
@@ -221,6 +227,7 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 
 
 
+[[create-a-storage-backend]]
 === ストレージバックエンドを作成する
 
 Kerberos 暗号化機能を含む Azure NetApp Files ストレージバックエンド構成を作成できます。
@@ -347,6 +354,7 @@ tridentctl logs
 
 
 
+[[create-a-storage-class]]
 === ストレージクラスを作成する
 
 Kerberos 暗号化を使用してボリュームをプロビジョニングするためのストレージクラスを作成できます。
@@ -391,6 +399,7 @@ sc-nfs       csi.trident.netapp.io   15h
 
 
 
+[[provision-volumes]]
 === ボリュームのプロビジョニング
 
 ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになります。手順については、 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームをプロビジョニングする"^]を参照してください。

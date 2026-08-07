@@ -16,6 +16,7 @@ Azure NetApp Files の NFS および SMB バックエンド構成オプション
 
 
 
+[[backend-configuration-options]]
 == バックエンド構成オプション
 
 Tridentは、バックエンド構成（サブネット、仮想ネットワーク、サービスレベル、場所）を使用して、要求された場所で使用可能であり、要求されたサービスレベルとサブネットに一致する容量プール上にAzure NetApp Filesボリュームを作成します。
@@ -97,6 +98,7 @@ NOTE: ネットワーク機能の詳細については、link:https://docs.micro
 
 
 
+[[required-permissions-and-resources]]
 === 必要な権限とリソース
 
 PVCの作成時に「容量プールが見つかりません」というエラーが表示される場合は、アプリ登録に必要な権限とリソース（サブネット、仮想ネットワーク、容量プール）が関連付けられていない可能性があります。デバッグが有効になっている場合、Tridentはバックエンドの作成時に検出されたAzureリソースをログに記録します。適切なロールが使用されていることを確認します。
@@ -129,6 +131,7 @@ NOTE: vNetが Azure NetApp Files（ANF）ストレージアカウントとは異
 |===
 
 
+[[volume-provisioning]]
 === ボリュームのプロビジョニング
 
 構成ファイルの特別なセクションで次のオプションを指定することにより、デフォルトのボリュームのプロビジョニングを制御できます。詳細については、<<構成例>>を参照してください。
@@ -152,6 +155,7 @@ NOTE: vNetが Azure NetApp Files（ANF）ストレージアカウントとは異
 |===
 
 
+[[example-configurations]]
 == 構成例
 
 次の例は、ほとんどのパラメータをデフォルトのままにする基本構成を示しています。これはバックエンドを定義する最も簡単な方法です。
@@ -393,12 +397,14 @@ supportedTopologies:
 ====
 
 
+[[storage-class-definitions]]
 == ストレージクラスの定義
 
 次の `StorageClass`定義は、上記のストレージプールを参照します。
 
 
 
+[[example-definitions-using-parameter-selector-field]]
 ===  `parameter.selector`フィールドを使用した定義例
 
  `parameter.selector`を使用すると、 `StorageClass`ごとに、ボリュームをホストするために使用される仮想プールを指定できます。ボリュームには、選択したプールで定義された側面が含まれます。
@@ -437,6 +443,7 @@ allowVolumeExpansion: true
 ----
 
 
+[[example-definitions-for-smb-volumes]]
 === SMB ボリュームの定義例
 
  `nasType`、 `node-stage-secret-name`、および `node-stage-secret-namespace`を使用すると、SMBボリュームを指定し、必要なActive Directory資格情報を提供できます。
@@ -497,6 +504,7 @@ NOTE: `nasType: smb` SMB ボリュームをサポートするプールのフィ�
 
 
 
+[[create-the-backend]]
 == バックエンドを作成する
 
 バックエンド構成ファイルを作成したら、次のコマンドを実行します：

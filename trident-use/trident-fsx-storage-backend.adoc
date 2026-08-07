@@ -13,6 +13,7 @@ summary: TridentとAmazon FSx for NetApp ONTAPを使用することで、Amazon 
 
 
 
+[[ontap-san-and-nas-driver-integration]]
 == ONTAP SAN および NAS ドライバの統合
 
 ストレージ バックエンドを作成するには、JSON または YAML 形式で設定ファイルを作成する必要があります。ファイルでは、必要なストレージのタイプ（NAS または SAN）、ファイル システム、ストレージの取得元となる SVM、および認証方法を指定する必要があります。次の例は、NAS ベースのストレージを定義し、AWS シークレットを使用して使用する SVM のクレデンシャルを保存する方法を示しています：
@@ -100,6 +101,7 @@ backend-tbc-ontap-nas        tbc-ontap-nas        933e0071-66ce-4324-b9ff-f96d91
 
 
 
+[[fsx-for-ontap-driver-details]]
 == FSx for ONTAPドライバーの詳細
 
 次のドライバを使用して、Trident を Amazon FSx for NetApp ONTAP と統合できます：
@@ -132,6 +134,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 ----
 
 
+[[backend-advanced-configuration-and-examples]]
 == バックエンドの高度な構成と例
 
 バックエンド構成オプションについては、次の表を参照してください：
@@ -224,6 +227,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 |===
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == ボリュームのプロビジョニング用のバックエンド設定オプション
 
 デフォルトのプロビジョニングは、設定の `defaults`セクションにあるこれらのオプションを使用して制御できます。例については、以下の設定例を参照してください。
@@ -257,7 +261,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 | `encryption` | 新しいボリュームでNetApp Volume Encryption（NVE）を有効にします。デフォルトは `false`です。このオプションを使用するには、NVEのライセンスを取得し、クラスタで有効にする必要があります。バックエンドでNAEが有効になっている場合、TridentでプロビジョニングされたボリュームはすべてNAEが有効になります。詳細については、次を参照してください：link:../trident-reco/security-reco.html["Tridentと NVE および NAE の連携"]。 | `false` 
 
 
-| `luksEncryption` | LUKS 暗号化を有効にします。link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["Linux Unified Key Setup（LUKS）を使用する"]を参照してください。SAN のみ。 | "" 
+| `luksEncryption` | LUKS暗号化を有効にします。link:../trident-reco/security-reco.html["Linux Unified Key Setup（LUKS）を使用する"]を参照してください。SANのみ。 | "" 
 
 
 | `tieringPolicy` | 使用する階層化ポリシー	`none` |  
@@ -270,6 +274,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 |===
 
 
+[[provision-smb-volumes]]
 == SMB ボリュームのプロビジョニング
 
  `ontap-nas`ドライバを使用してSMBボリュームをプロビジョニングできます。<<ONTAP SAN および NAS ドライバの統合>>を完了する前に、次の手順を実行します（link:https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html#prepare-to-provision-smb-volumes["SMB ボリュームのプロビジョニングの準備"]）。

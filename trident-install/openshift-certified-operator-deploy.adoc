@@ -19,6 +19,7 @@ NetApp Community Trident OperatorからRed Hat OpenShift Certified Trident Opera
 
 
 
+[[uninstall-the-netapp-trident-community-operator]]
 == NetApp Tridentコミュニティオペレーターをアンインストールします
 
 .手順
@@ -39,6 +40,7 @@ WARNING: *この演算子からすべてのオペランドインスタンスを�
 
 
 
+[[install-the-openshift-certified-operator]]
 == OpenShift認定オペレーターをインストールします
 
 .手順
@@ -52,6 +54,7 @@ image::../media/openshift-operator-05.png[インストール]
 
 
 
+[[verification]]
 == 検証
 
 * コンソールのOperatorHubを確認して、新しい認定オペレータが正常にインストールされたことを確認します。

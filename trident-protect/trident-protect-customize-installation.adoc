@@ -16,6 +16,7 @@ summary: Trident Protectのデフォルト設定を、特定のニーズに合�
 
 
 
+[[specify-trident-protect-container-resource-limits]]
 == Trident Protectコンテナのリソース制限を指定する
 
 Trident Protectのインストール後、設定ファイルを使用してTrident Protectコンテナのリソース制限を指定できます。リソース制限を設定すると、Trident Protect操作によって消費されるクラスタのリソース量を制御できます。
@@ -87,6 +88,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
 
 
 
+[[customize-security-context-constraints]]
 == セキュリティコンテキスト制約をカスタマイズする
 
 Trident Protect のインストール後、設定ファイルを使用して Trident Protect コンテナの OpenShift セキュリティコンテキスト制約（SCC）を変更できます。これらの制約は、Red Hat OpenShift クラスタ内のポッドのセキュリティ制限を定義します。
@@ -134,6 +136,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
 
 
 
+[[configure-additional-trident-protect-helm-chart-settings]]
 == 追加のTrident Protectヘルムチャート設定を構成する
 
 AutoSupportの設定と名前空間フィルタリングをカスタマイズして、特定の要件を満たすことができます。次の表に、使用可能な設定パラメータを示します：
@@ -204,6 +207,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
 ====
 
 
+[[restrict-trident-protect-pods-to-specific-nodes]]
 == 特定のノードへのTrident Protectポッドの制限
 
 Kubernetes の nodeSelector ノード選択制約を使用して、ノードラベルに基づいて Trident Protect ポッドを実行できるノードを制御できます。デフォルトでは、Trident Protect は Linux を実行しているノードに制限されます。ニーズに応じてこれらの制約をさらにカスタマイズできます。
